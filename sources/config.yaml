@@ -1,7 +1,10 @@
+Copyright 2022 The Gloock Project Authors (https://github.com/duartp/gloock)
+
 sources:
-  - Rubik.glyphs
-  - Rubik-Italic.glyphs
+  - Gloock.glyphs
+  - Gloock-Italic.glyphs
 axisOrder:
   - wght
   - ital
-familyName: Rubik
+familyName: Gloock
+

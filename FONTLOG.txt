@@ -1,0 +1,16 @@
+FONTLOG for the Gloock font
+
+This file provides detailed information on the Gloock Font Software.
+This information should be distributed along with the Glück font
+and any derivative works.
+
+Basic Font Information
+
+Gloock is a Unicode typeface family that supports all languages that
+use the Latin script and its variants, and could be expanded to support other
+scripts.
+
+ChangeLog
+
+10 Aug 2022 (Duarte Pinto) Gloock Version 1.0
+- Initial release

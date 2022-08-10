@@ -1,4 +1,4 @@
-Copyright 2022 The Gloock-Typeface Project Authors (https://github.com/googlefonts/googlefonts-project-template)
+Copyright 2022 The Gloock Project Authors (https://github.com/duartp/gloock)
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at:

@@ -2,6 +2,4 @@
 # This file is distinct from the CONTRIBUTORS.txt file.
 # See the latter for an explanation.
 #
-# Names should be added to this file as:
-# Name or Organization <email address>
-
+# Duarte Pinto <duarte.pinto02@gmail.com>
