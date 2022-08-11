@@ -18,7 +18,11 @@ This project includes the Latin Basic character set, 257 glyphs in total.
 
 ## About
 
-I started craving typography last summer, and ever since I thought it would be fun to craft my own. I'm studying graphic design and cur
+Name's Duarte. I'm a young graphic designer from Portugal looking to make a career in art. 
+
+I started craving typography last summer.
+
+Ever since I thought it would be fun to craft my own. 
 
 ## Building
 
