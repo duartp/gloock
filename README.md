@@ -2,7 +2,7 @@
 
 Meet Gloock: a contemporary high-contrast serif typeface intended for display use. 
 
-![g11](https://user-images.githubusercontent.com/53453513/184190403-e8b5cc5a-7f1d-42b6-9083-82d0b1539e7b.jpg)
+![g11](https://user-images.githubusercontent.com/53453513/184191449-480b5971-21a3-4c03-a882-bb6b15a5c05a.jpg)
 
 Gloock's main focus was a smooth relationship between the thin and thick strokes. 
 
@@ -10,9 +10,9 @@ One way to achieve that was by using long serifs that create a bridge between so
 
 It mostly shines in headlines but performs well anywhere in big sizes.
 
-![g12](https://user-images.githubusercontent.com/53453513/184190427-6bf49aa5-8324-4270-9e1a-99e76c13202c.jpg)
-![g13](https://user-images.githubusercontent.com/53453513/184190439-00b17a59-2730-4b2b-8e76-4b66bed2f2a7.jpg)
-![g14](https://user-images.githubusercontent.com/53453513/184190447-20c26994-c4b7-44ea-8505-3714fa2cec98.jpg)
+![g12](https://user-images.githubusercontent.com/53453513/184191476-14375895-fa9c-4f24-94b6-a50739a72d42.jpg)
+![g13](https://user-images.githubusercontent.com/53453513/184191501-92ea1b89-28a7-4a8a-adb7-fd756bc003bf.jpg)
+![g14](https://user-images.githubusercontent.com/53453513/184191505-c6cf44b7-508e-4709-abab-7ecada7934a9.jpg)
 ![g15](https://user-images.githubusercontent.com/53453513/184190458-441bc931-7c03-46b0-b86d-cc5df68cac99.jpg)
 
 This project includes the Latin Basic character set, 257 glyphs in total.
