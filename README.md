@@ -1,26 +1,15 @@
 # Gloock
 
-[![][Fontbakery]](https://duartp.github.io/gloock-typeface/fontbakery/fontbakery-report.html)
-[![][Universal]](https://duartp.github.io/gloock-typeface/fontbakery/fontbakery-report.html)
-[![][GF Profile]](https://duartp.github.io/gloock-typeface/fontbakery/fontbakery-report.html)
-[![][Outline Correctness]](https://duartp.github.io/gloock-typeface/fontbakery/fontbakery-report.html)
-[![][Shaping]](https://duartp.github.io/gloock-typeface/fontbakery/fontbakery-report.html)
-
-[Fontbakery]: https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fduartp%2Fgloock-typeface%2Fgh-pages%2Fbadges%2Foverall.json
-[GF Profile]: https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fduartp%2Fgloock-typeface%2Fgh-pages%2Fbadges%2FGoogleFonts.json
-[Outline Correctness]: https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fduartp%2Fgloock-typeface%2Fgh-pages%2Fbadges%2FOutlineCorrectnessChecks.json
-[Shaping]: https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fduartp%2Fgloock-typeface%2Fgh-pages%2Fbadges%2FShapingChecks.json
-[Universal]: https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fduartp%2Fgloock-typeface%2Fgh-pages%2Fbadges%2FUniversal.json
-
-Description of your font goes here. We recommend to start with a very short presentation line (the kind you would use on twitter to present your project for example), and then add as much details as necesary :-) Origin of the project, idea of usage, concept of creation… but also number of masters, axes, character sets, etc.
+Meet Gloock: a contemporary high-contrast serif typeface intended for display use. 
+It has been inspired by Neue World, Ivar Display and many other display typefaces. Gloock's main focus was a smooth relationship between the thin and 
+This projects includes the Latin Basic character set
+Origin of the project, idea of usage, concept of creation… but also number of masters, axes, character sets, etc.
 
 Don't hesitate to create images!
 
-![Sample Image](documentation/image1.png)
-
 ## About
 
-Description of you and/or organisation goes here.
+I started craving typography last summer, and ever since I thought it would be fun to craft my own. I'm studying graphic design and cur
 
 ## Building
 
@@ -36,13 +25,8 @@ The proof files and QA tests are also available automatically via GitHub Actions
 
 ## Changelog
 
-When you update your font (new version or new release), please report all notable changes here, with a date.
-[Font Versioning](https://github.com/googlefonts/gf-docs/tree/main/Spec#font-versioning) is based on semver. 
-Changelog example:
-
-**26 May 2021. Version 2.13**
-- MAJOR Font turned to a variable font.
-- SIGNIFICANT New Stylistic sets added.
+**10 Aug 2022 (Duarte Pinto) Gloock Version 1.0**
+- Initial release
 
 ## License
 
