@@ -17,8 +17,9 @@ It mostly shines in headlines but performs well anywhere in big sizes.
 
 This project includes the Latin Basic character set, 257 glyphs in total.
 
-In case you are really interested on the whole journey I encourage you to look at this thread: 
-https://typedrawers.com/discussion/4137/display-serif-w-tall-letters#latest
+If by any chance you are interested in the whole journey, I encourage you to look at this thread:
+
+(https://typedrawers.com/discussion/4137/display-serif-w-tall-letters)
 
 ## About
 
