@@ -2,7 +2,7 @@
 
 Meet Gloock: a contemporary high-contrast serif typeface intended for display use. 
 
-![g11](https://user-images.githubusercontent.com/53453513/184191449-480b5971-21a3-4c03-a882-bb6b15a5c05a.jpg)
+![g11](https://user-images.githubusercontent.com/53453513/184191663-970889a5-8012-4d10-82c5-05df6f464c12.jpg)
 
 Gloock's main focus was a smooth relationship between the thin and thick strokes. 
 
