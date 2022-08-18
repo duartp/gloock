@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="acute" format="2">
+  <advance width="269"/>
+  <unicode hex="00B4"/>
+  <outline>
+    <contour>
+      <point x="238" y="721" type="line"/>
+      <point x="238" y="726" type="line"/>
+      <point x="173" y="784" type="line"/>
+      <point x="168" y="784" type="line"/>
+      <point x="31" y="591" type="line"/>
+      <point x="38" y="581" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+  <dict>
+  <key>public.postscript.hints</key>
+  <dict>
+    <key>formatVersion</key>
+    <string>1</string>
+    <key>id</key>
+    <string>w269m238,721l238,726l173,784l168,784l31,591l38,581</string>
+    <key>hintSetList</key>
+    <array>
+      <dict>
+        <key>stems</key>
+        <array>
+          <string>hstem 581 203</string>
+          <string>vstem 31 207</string>
+        </array>
+      </dict>
+    </array>
+  </dict>
+  </dict>
+  </lib>
+</glyph>
