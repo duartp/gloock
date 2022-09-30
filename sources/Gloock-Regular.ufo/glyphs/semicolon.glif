@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="semicolon" format="2">
+  <advance width="230"/>
+  <unicode hex="003B"/>
+  <outline>
+    <contour>
+      <point x="30" y="427" type="curve" smooth="yes"/>
+      <point x="30" y="381"/>
+      <point x="69" y="342"/>
+      <point x="115" y="342" type="curve" smooth="yes"/>
+      <point x="161" y="342"/>
+      <point x="200" y="381"/>
+      <point x="200" y="427" type="curve" smooth="yes"/>
+      <point x="200" y="474"/>
+      <point x="161" y="512"/>
+      <point x="115" y="512" type="curve" smooth="yes"/>
+      <point x="69" y="512"/>
+      <point x="30" y="474"/>
+    </contour>
+    <contour>
+      <point x="35" y="80" type="curve" smooth="yes"/>
+      <point x="35" y="0"/>
+      <point x="133" y="28"/>
+      <point x="133" y="-30" type="curve" smooth="yes" name=".hr01"/>
+      <point x="133" y="-74"/>
+      <point x="96" y="-100"/>
+      <point x="53" y="-151" type="curve"/>
+      <point x="62" y="-155" type="line"/>
+      <point x="131" y="-79"/>
+      <point x="195" y="-30"/>
+      <point x="195" y="65" type="curve" smooth="yes"/>
+      <point x="195" y="120"/>
+      <point x="162" y="156"/>
+      <point x="113" y="156" type="curve" smooth="yes"/>
+      <point x="66" y="156"/>
+      <point x="35" y="126"/>
+    </contour>
+  </outline>
+  <lib>
+  <dict>
+  <key>public.postscript.hints</key>
+  <dict>
+    <key>formatVersion</key>
+    <string>1</string>
+    <key>id</key>
+    <string>c79daceea23e20db246d4495f0e955aa70cccbb33dbf52d236c005b41739ca02626ab6b1711fd9d95b299d7a2125b31673b10cf7a78648e419a7353417727e09</string>
+    <key>hintSetList</key>
+    <array>
+      <dict>
+        <key>stems</key>
+        <array>
+          <string>vstem 30 170</string>
+          <string>hstem 342 170</string>
+        </array>
+      </dict>
+      <dict>
+        <key>stems</key>
+        <array>
+          <string>vstem 133 62</string>
+          <string>hstem 342 170</string>
+        </array>
+        <key>pointTag</key>
+        <string>.hr01</string>
+      </dict>
+    </array>
+  </dict>
+  </dict>
+  </lib>
+</glyph>
