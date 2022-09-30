@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="Abreve" format="2">
+  <advance width="684"/>
+  <unicode hex="0102"/>
+  <outline>
+    <component base="A"/>
+    <component base="breve" xOffset="188" yOffset="192"/>
+  </outline>
+  <lib>
+  <dict>
+  <key>com.fontlab.recipe</key>
+  <string>A+breve</string>
+  </dict>
+  </lib>
+</glyph>

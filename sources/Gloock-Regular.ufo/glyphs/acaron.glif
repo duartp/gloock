@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="acaron" format="2">
+  <advance width="551"/>
+  <unicode hex="01CE"/>
+  <outline>
+    <component base="a"/>
+    <component base="caron" xOffset="91"/>
+  </outline>
+  <guideline angle="90" x="270" y="0"/>
+  <lib>
+  <dict>
+  <key>com.fontlab.recipe</key>
+  <string>a+caron</string>
+  </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="brevecomb" format="2">
+  <advance width="308"/>
+  <unicode hex="0306"/>
+  <outline>
+    <component base="breve"/>
+  </outline>
+  <lib>
+  <dict>
+  <key>com.fontlab.recipe</key>
+  <string>breve%</string>
+  </dict>
+  </lib>
+</glyph>
