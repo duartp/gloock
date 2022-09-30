@@ -15,7 +15,7 @@ It mostly shines in headlines but performs well anywhere in big sizes.
 ![g14](https://user-images.githubusercontent.com/53453513/184191505-c6cf44b7-508e-4709-abab-7ecada7934a9.jpg)
 ![g15](https://user-images.githubusercontent.com/53453513/184190458-441bc931-7c03-46b0-b86d-cc5df68cac99.jpg)
 
-This project includes the Latin Basic character set, 257 glyphs in total.
+This project includes the Latin Basic character set, 381 glyphs in total.
 
 If by any chance you are interested in the whole journey, I encourage you to look at this thread:
 
