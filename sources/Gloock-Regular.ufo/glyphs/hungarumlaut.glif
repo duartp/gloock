@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="hungarumlaut" format="2">
+  <advance width="435"/>
+  <unicode hex="02DD"/>
+  <outline>
+    <contour>
+      <point x="238" y="721" type="line"/>
+      <point x="238" y="726" type="line"/>
+      <point x="173" y="784" type="line"/>
+      <point x="168" y="784" type="line"/>
+      <point x="31" y="591" type="line"/>
+      <point x="38" y="581" type="line"/>
+    </contour>
+    <contour>
+      <point x="404" y="721" type="line"/>
+      <point x="404" y="726" type="line"/>
+      <point x="340" y="784" type="line"/>
+      <point x="335" y="784" type="line"/>
+      <point x="197" y="591" type="line"/>
+      <point x="204" y="581" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+  <dict>
+  <key>public.postscript.hints</key>
+  <dict>
+    <key>formatVersion</key>
+    <string>1</string>
+    <key>id</key>
+    <string>w435m238,721l238,726l173,784l168,784l31,591l38,581m404,721l404,726l340,784l335,784l197,591l204,581</string>
+    <key>hintSetList</key>
+    <array>
+      <dict>
+        <key>stems</key>
+        <array>
+          <string>hstem 581 203</string>
+          <string>vstem 31 373</string>
+        </array>
+      </dict>
+    </array>
+  </dict>
+  </dict>
+  </lib>
+</glyph>

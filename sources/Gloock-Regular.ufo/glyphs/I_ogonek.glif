@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="Iogonek" format="2">
+  <advance width="317"/>
+  <unicode hex="012E"/>
+  <outline>
+    <contour>
+      <point x="316" y="10" type="line" smooth="yes"/>
+      <point x="268" y="10"/>
+      <point x="236" y="42"/>
+      <point x="236" y="90" type="curve" smooth="yes"/>
+      <point x="236" y="660" type="line" smooth="yes"/>
+      <point x="236" y="708"/>
+      <point x="268" y="740"/>
+      <point x="316" y="740" type="curve" smooth="yes"/>
+      <point x="317" y="740" type="line"/>
+      <point x="317" y="750" type="line"/>
+      <point x="0" y="750" type="line"/>
+      <point x="0" y="740" type="line"/>
+      <point x="1" y="740" type="line" smooth="yes"/>
+      <point x="49" y="740"/>
+      <point x="81" y="708"/>
+      <point x="81" y="660" type="curve" smooth="yes"/>
+      <point x="81" y="90" type="line" smooth="yes"/>
+      <point x="81" y="42"/>
+      <point x="49" y="10"/>
+      <point x="1" y="10" type="curve" smooth="yes"/>
+      <point x="0" y="10" type="line"/>
+      <point x="0" y="0" type="line"/>
+      <point x="159.601" y="0" type="line"/>
+      <point x="95.5066" y="-16.5028"/>
+      <point x="55" y="-65.9242"/>
+      <point x="55" y="-133" type="curve" smooth="yes"/>
+      <point x="55" y="-191"/>
+      <point x="95" y="-225"/>
+      <point x="164" y="-225" type="curve" smooth="yes"/>
+      <point x="196" y="-225"/>
+      <point x="213" y="-218"/>
+      <point x="248" y="-218" type="curve"/>
+      <point x="267" y="-119" type="line"/>
+      <point x="256" y="-119" type="line"/>
+      <point x="244" y="-171"/>
+      <point x="212" y="-208"/>
+      <point x="179" y="-208" type="curve" smooth="yes"/>
+      <point x="151" y="-208"/>
+      <point x="135" y="-183"/>
+      <point x="135" y="-140" type="curve" smooth="yes"/>
+      <point x="135" y="-74"/>
+      <point x="172" y="-15"/>
+      <point x="223" y="0" type="curve"/>
+      <point x="317" y="0" type="line"/>
+      <point x="317" y="10" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+  <dict>
+  <key>com.fontlab.recipe</key>
+  <string>I+>ogonek</string>
+  <key>public.postscript.hints</key>
+  <dict>
+    <key>formatVersion</key>
+    <string>1</string>
+    <key>id</key>
+    <string>6920ed82c7b37ab8c00232858b66afef505ce180210183bd18d6cabadd15436915e1f9c1cca2e99d4c271ba7af640685fcef7fd686fbadf08b1813b09bd4d08a</string>
+    <key>hintSetList</key>
+    <array>
+      <dict>
+        <key>stems</key>
+        <array>
+          <string>hstem 0 10</string>
+          <string>hstem 740 10</string>
+          <string>vstem 81 155</string>
+        </array>
+      </dict>
+    </array>
+  </dict>
+  </dict>
+  </lib>
+</glyph>
