@@ -15,10 +15,6 @@ It's a perfect typeface for headlines and has a great performance anywhere in bi
 
 This project includes the GF Latin Plus character set, 508 glyphs in total.
 
-If by any chance you are interested in the whole journey, I encourage you to look at this thread:
-
-(https://typedrawers.com/discussion/4137/display-serif-w-tall-letters)
-
 ## About
 
 Name's Pinto. A young graphic designer from Portugal with great interest in typography.
