@@ -4,18 +4,16 @@ Meet Gloock: a contemporary high-contrast serif typeface intended for display us
 
 ![g11](https://user-images.githubusercontent.com/53453513/184191663-970889a5-8012-4d10-82c5-05df6f464c12.jpg)
 
-Gloock's main focus was a smooth relationship between the thin and thick strokes. 
+Gloock's main focus is the smooth relationship between the thin and thick strokes. 
 
-One way to achieve that was by using long serifs that create a bridge between some pairs of glyphs. 
-
-It mostly shines in headlines but performs well anywhere in big sizes.
+It's a perfect typeface for headlines and has a great performance anywhere in big sizes.
 
 ![g12](https://user-images.githubusercontent.com/53453513/184191476-14375895-fa9c-4f24-94b6-a50739a72d42.jpg)
 ![g13](https://user-images.githubusercontent.com/53453513/184191501-92ea1b89-28a7-4a8a-adb7-fd756bc003bf.jpg)
 ![g14](https://user-images.githubusercontent.com/53453513/184191505-c6cf44b7-508e-4709-abab-7ecada7934a9.jpg)
 ![g15](https://user-images.githubusercontent.com/53453513/184190458-441bc931-7c03-46b0-b86d-cc5df68cac99.jpg)
 
-This project includes the Latin Basic character set, 508 glyphs in total.
+This project includes the GF Latin Plus character set, 508 glyphs in total.
 
 If by any chance you are interested in the whole journey, I encourage you to look at this thread:
 
@@ -23,11 +21,9 @@ If by any chance you are interested in the whole journey, I encourage you to loo
 
 ## About
 
-Name's Duarte. I'm a young graphic designer from Portugal looking to make a career in art. 
+Name's Pinto. A young graphic designer from Portugal with great interest in typography.
 
-I started craving typography last summer.
-
-Ever since I thought it would be fun to craft my own. 
+Currently working on modular typefaces.
 
 ## Building
 
