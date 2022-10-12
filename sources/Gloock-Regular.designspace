@@ -2,7 +2,7 @@
 <designspace format="4.0">
  <axes/>
  <sources>
-  <source filename="masters/Gloock-Regular.ufo" stylename="Regular" name="Regular" familyname="Gloock">
+  <source name="Regular" stylename="Regular" familyname="Gloock" filename="masters/Gloock-Regular.ufo">
    <lib copy="1"/>
    <groups copy="1"/>
    <info copy="1"/>
