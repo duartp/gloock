@@ -2,4 +2,4 @@
 # This file is distinct from the CONTRIBUTORS.txt file.
 # See the latter for an explanation.
 #
-# Duarte Pinto <duarte.pinto02@gmail.com>
+Duarte Pinto <duarte.pinto02@gmail.com>
