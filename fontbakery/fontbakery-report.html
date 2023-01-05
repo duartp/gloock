@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+                <html lang="en">
+                    <head>
+                        <meta charset="utf-8">
+                        <title>Fontbakery Check Report</title>
+                        <style>
+                            
+            html {
+                font-family: sans-serif;
+            }
+
+            h2 {
+                margin-top: 2em;
+            }
+
+            h3 {
+                margin-bottom: 1px;
+            }
+
+            table {
+                border-collapse: collapse;
+            }
+
+            th,
+            td {
+                border: 1px solid #ddd;
+                padding: 0.5em
+            }
+
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            tr {
+                text-align: left;
+            }
+
+            ul {
+                margin-top: 0;
+            }
+
+            .details_item {
+                list-style: none;
+                display: flex;
+                align-items: baseline;
+            }
+
+            .details_indicator {
+                flex: 0 0 5em;
+                font-weight: bold;
+                padding-right: 0.5em;
+                text-align: right;
+            }
+
+            .details_text {
+                flex: 1 0;
+            }
+            
+                        </style>
+                    </head>
+                    <body>
+                    <h1>Fontbakery Technical Report</h1>
+<div>If you think a check is flawed or have an idea for a check, please  file an issue at <a href='https://github.com/googlefonts/fontbakery/issues'>https://github.com/googlefonts/fontbakery/issues</a> and remember to include a pointer to the repo and branch you're checking.</div>
+<h2>Summary</h2>
+            <table>
+            <tr>
+                <th>💥 ERROR</th>
+                <th>🔥 FAIL</th>
+                <th>⚠️ WARN</th>
+                <th>⏩ SKIP</th>
+                <th>ℹ️ INFO</th>
+                <th>✔️ PASS</th>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>9</td>
+                <td>114</td>
+                <td>7</td>
+                <td>105</td>
+            </tr>
+            <tr>
+                <td>0%</td>
+                <td>0%</td>
+                <td>5%</td>
+                <td>65%</td>
+                <td>4%</td>
+                <td>60%</td>
+            </tr>
+            </table>
+            
+<p><strong>Note:</strong> The following loglevels were omitted in this report: SKIP, INFO, PASS, DEBUG</p>
+<h2>&lt;Section: Google Fonts&gt; ⚠️⚠️⚠️⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩ℹ️ℹ️ℹ️ℹ️ℹ️</h2>
+<h3>Checking OS/2 achVendID.</h3>
+<div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/vendor_id&gt;</div>
+
+<details><summary>⚠️ <strong>fonts/ttf/Gloock-Regular.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>OS/2 VendorID value 'NONE' is not yet recognized. If you registered it recently, then it's safe to ignore this warning message. Otherwise, you should set it to your own unique 4 character code, and register it with Microsoft at https://www.microsoft.com/typography/links/vendorlist.aspx
+[code: unknown]</p>
+</span></li></ul></div></details>
+<h3>Is there kerning info for non-ligated sequences?</h3>
+<div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/kerning_for_non_ligated_sequences&gt;</div>
+
+<details><summary>⚠️ <strong>fonts/ttf/Gloock-Regular.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>GPOS table lacks kerning info for the following non-ligated sequences:</p>
+<pre><code>- f + f
+
+- f + b
+
+- b + f
+
+- f + h
+
+- h + f
+
+- f + i
+
+- i + f
+
+- f + j
+
+- j + f
+
+- f + k 
+
+- And 10 more.
+</code></pre>
+<p>Use -F or --full-lists to disable shortening of long lists. [code: lacks-kern-info]</p>
+</span></li></ul></div></details>
+<h3>Ensure fonts have ScriptLangTags declared on the 'meta' table.</h3>
+<div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/meta/script_lang_tags&gt;</div>
+
+<details><summary>⚠️ <strong>fonts/ttf/Gloock-Regular.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>This font file does not have a 'meta' table. [code: lacks-meta-table]</p>
+</span></li></ul></div></details>
+<h2>&lt;Section: Universal&gt; ⚠️⚠️⚠️⏩⏩⏩⏩ℹ️ℹ️</h2>
+<h3>Check font contains no unreachable glyphs</h3>
+<div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/unreachable_glyphs&gt;</div>
+
+<details><summary>⚠️ <strong>fonts/ttf/Gloock-Regular.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>The following glyphs could not be reached by codepoint or substitution rules:</p>
+<pre><code>- two.onum
+
+- one.onum
+
+- zero.onum
+
+- four.onum
+
+- caron.alt
+
+- five.onum
+
+- nine.onum
+
+- seven.onum
+
+- eight.onum
+
+- six.onum 
+
+- And 3 more.
+</code></pre>
+<p>Use -F or --full-lists to disable shortening of long lists.
+[code: unreachable-glyphs]</p>
+</span></li></ul></div></details>
+<h3>Check if each glyph has the recommended amount of contours.</h3>
+<div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/contour_count&gt;</div>
+
+<details><summary>⚠️ <strong>fonts/ttf/Gloock-Regular.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>This check inspects the glyph outlines and detects the total number of contours in each of them. The expected values are infered from the typical ammounts of contours observed in a large collection of reference font families. The divergences listed below may simply indicate a significantly different design on some of your glyphs. On the other hand, some of these may flag actual bugs in the font such as glyphs mapped to an incorrect codepoint. Please consider reviewing the design and codepoint assignment of these to make sure they are correct.</p>
+<p>The following glyphs do not have the recommended number of contours:</p>
+<pre><code>- Glyph name: aogonek	Contours detected: 3	Expected: 2
+
+- Glyph name: eogonek	Contours detected: 3	Expected: 2
+
+- Glyph name: Uogonek	Contours detected: 2	Expected: 1
+
+- Glyph name: uogonek	Contours detected: 2	Expected: 1
+
+- Glyph name: uni0E3F	Contours detected: 5	Expected: 3
+
+- Glyph name: uni20A9	Contours detected: 6	Expected: 1, 3, 4 or 7
+
+- Glyph name: Uogonek	Contours detected: 2	Expected: 1
+
+- Glyph name: aogonek	Contours detected: 3	Expected: 2
+
+- Glyph name: eogonek	Contours detected: 3	Expected: 2
+
+- Glyph name: fi	Contours detected: 2	Expected: 3 
+
+- And 3 more.
+</code></pre>
+<p>Use -F or --full-lists to disable shortening of long lists.
+[code: contour-count]</p>
+</span></li></ul></div></details>
+<h3>Ensure dotted circle glyph is present and can attach marks.</h3>
+<div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/dotted_circle&gt;</div>
+
+<details><summary>⚠️ <strong>fonts/ttf/Gloock-Regular.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>No dotted circle glyph present [code: missing-dotted-circle]</p>
+</span></li></ul></div></details>
+<h2>&lt;Section: Outline Correctness Checks&gt; ⚠️⚠️⚠️</h2>
+<h3>Do any segments have colinear vectors?</h3>
+<div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/outline_colinear_vectors&gt;</div>
+
+<details><summary>⚠️ <strong>fonts/ttf/Gloock-Regular.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>The following glyphs have colinear vectors:</p>
+<pre><code>* uni0E3F (U+0E3F): L&lt;&lt;299.0,33.0&gt;--&lt;296.0,33.0&gt;&gt; -&gt; L&lt;&lt;296.0,33.0&gt;--&lt;30.0,33.0&gt;&gt; [code: found-colinear-vectors]
+</code></pre>
+</span></li></ul></div></details>
+<h3>Do outlines contain any jaggy segments?</h3>
+<div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/outline_jaggy_segments&gt;</div>
+
+<details><summary>⚠️ <strong>fonts/ttf/Gloock-Regular.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>The following glyphs have jaggy segments:</p>
+<pre><code>* B (U+0042): B&lt;&lt;513.5,482.0&gt;-&lt;464.0,440.0&gt;-&lt;384.0,430.0&gt;&gt;/B&lt;&lt;384.0,430.0&gt;-&lt;458.0,426.0&gt;-&lt;513.5,400.5&gt;&gt; = 10.21907440781888
+
+* eight (U+0038): B&lt;&lt;495.0,528.5&gt;-&lt;444.0,491.0&gt;-&lt;357.0,483.0&gt;&gt;/B&lt;&lt;357.0,483.0&gt;-&lt;427.0,475.0&gt;-&lt;478.0,442.0&gt;&gt; = 11.7736045029192
+
+* eight (U+0038): B&lt;&lt;96.0,404.0&gt;-&lt;157.0,471.0&gt;-&lt;263.0,483.0&gt;&gt;/B&lt;&lt;263.0,483.0&gt;-&lt;176.0,491.0&gt;-&lt;125.0,529.0&gt;&gt; = 11.712619129980897
+
+* uni0E3F (U+0E3F): B&lt;&lt;469.5,446.5&gt;-&lt;428.0,410.0&gt;-&lt;358.0,401.0&gt;&gt;/B&lt;&lt;358.0,401.0&gt;-&lt;454.0,397.0&gt;-&lt;512.0,350.5&gt;&gt; = 9.712350690558281
+
+* uni2078 (U+2078): B&lt;&lt;288.0,634.5&gt;-&lt;260.0,614.0&gt;-&lt;212.0,609.0&gt;&gt;/B&lt;&lt;212.0,609.0&gt;-&lt;270.0,602.0&gt;-&lt;303.5,565.5&gt;&gt; = 12.828586684610446
+
+* uni2078 (U+2078): B&lt;&lt;68.5,565.5&gt;-&lt;102.0,602.0&gt;-&lt;160.0,609.0&gt;&gt;/B&lt;&lt;160.0,609.0&gt;-&lt;112.0,614.0&gt;-&lt;84.0,634.5&gt;&gt; = 12.828586684610446
+
+* uni2088 (U+2088): B&lt;&lt;288.0,154.5&gt;-&lt;260.0,134.0&gt;-&lt;212.0,129.0&gt;&gt;/B&lt;&lt;212.0,129.0&gt;-&lt;270.0,122.0&gt;-&lt;303.5,85.5&gt;&gt; = 12.828586684610446
+
+* uni2088 (U+2088): B&lt;&lt;68.5,85.5&gt;-&lt;102.0,122.0&gt;-&lt;160.0,129.0&gt;&gt;/B&lt;&lt;160.0,129.0&gt;-&lt;112.0,134.0&gt;-&lt;84.0,154.5&gt;&gt; = 12.828586684610446 
+
+* And uni20BF (U+20BF): B&lt;&lt;513.5,482.0&gt;-&lt;464.0,440.0&gt;-&lt;384.0,430.0&gt;&gt;/B&lt;&lt;384.0,430.0&gt;-&lt;458.0,426.0&gt;-&lt;513.5,400.5&gt;&gt; = 10.21907440781888 [code: found-jaggy-segments]
+</code></pre>
+</span></li></ul></div></details>
+<h3>Do outlines contain any semi-vertical or semi-horizontal lines?</h3>
+<div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/outline_semi_vertical&gt;</div>
+
+<details><summary>⚠️ <strong>fonts/ttf/Gloock-Regular.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>The following glyphs have semi-vertical/semi-horizontal lines:</p>
+<pre><code>* a (U+0061): L&lt;&lt;330.0,95.0&gt;--&lt;331.0,298.0&gt;&gt;
+
+* aacute (U+00E1): L&lt;&lt;330.0,95.0&gt;--&lt;331.0,298.0&gt;&gt;
+
+* abreve (U+0103): L&lt;&lt;330.0,95.0&gt;--&lt;331.0,298.0&gt;&gt;
+
+* acircumflex (U+00E2): L&lt;&lt;330.0,95.0&gt;--&lt;331.0,298.0&gt;&gt;
+
+* adieresis (U+00E4): L&lt;&lt;330.0,95.0&gt;--&lt;331.0,298.0&gt;&gt;
+
+* agrave (U+00E0): L&lt;&lt;330.0,95.0&gt;--&lt;331.0,298.0&gt;&gt;
+
+* amacron (U+0101): L&lt;&lt;330.0,95.0&gt;--&lt;331.0,298.0&gt;&gt;
+
+* aogonek (U+0105): L&lt;&lt;330.0,95.0&gt;--&lt;331.0,298.0&gt;&gt;
+
+* aring (U+00E5): L&lt;&lt;330.0,95.0&gt;--&lt;331.0,298.0&gt;&gt;
+
+* atilde (U+00E3): L&lt;&lt;330.0,95.0&gt;--&lt;331.0,298.0&gt;&gt; 
+
+* And 40 more.
+</code></pre>
+<p>Use -F or --full-lists to disable shortening of long lists. [code: found-semi-vertical]</p>
+</span></li></ul></div></details>
+                    </body>
+                </html>
