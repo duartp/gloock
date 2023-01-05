@@ -1,9 +1,6 @@
 {
 .appVersion = "3148";
 .formatVersion = 3;
-DisplayStrings = (
-"/dieresiscomb.case/circumflexcomb.case/gravecomb.case E/brevecomb.case GIL/caroncomb.alt.case/hungarumlautcomb.case Ø"
-);
 classes = (
 {
 code = "zero four five six seven eight nine zero.onum four.onum five.onum six.onum seven.onum eight.onum nine.onum";
@@ -20,6 +17,26 @@ name = lnum_onum;
 {
 code = "zero one two three four five six seven eight nine";
 name = lnum_onum_ordn;
+},
+{
+automatic = 1;
+code = "A Aacute Abreve Acaron Acircumflex Adieresis Agrave Amacron Aogonek Aring Atilde AE B C Cacute Ccaron Ccedilla Cdotaccent D Eth Dcaron Dcroat E Eacute Ecaron Ecircumflex Edieresis Edotaccent Egrave Emacron Eogonek F G Gbreve Gcommaaccent Gdotaccent H Hbar I IJ Iacute Icircumflex Idieresis Idotaccent Igrave Imacron Iogonek J K Kcommaaccent L Lacute Lcaron Lcommaaccent Lslash M N Nacute Ncaron Ncommaaccent Ntilde Eng O Oacute Ocircumflex Odieresis Ograve Ohungarumlaut Omacron Oslash Otilde OE P Thorn Q R Racute Rcaron Rcommaaccent S Sacute Scaron Scedilla Scommaaccent Germandbls T Tcaron Tcommaaccent U Uacute Ubreve Ucircumflex Udieresis Ugrave Uhungarumlaut Umacron Uogonek Uring V W Wacute Wcircumflex Wdieresis Wgrave X Y Yacute Ycircumflex Ydieresis Ygrave Z Zacute Zcaron Zdotaccent";
+name = Uppercase;
+}
+);
+customParameters = (
+{
+name = fsType;
+value = (
+);
+},
+{
+name = "Use Line Breaks";
+value = 1;
+},
+{
+name = "Use Typo Metrics";
+value = 1;
 }
 );
 date = "2023-01-05 09:57:08 +0000";
@@ -64,6 +81,22 @@ lookup ordn_2 {
 
 ";
 name = xxxx;
+},
+{
+automatic = 1;
+code = "languagesystem DFLT dflt;
+
+languagesystem latn dflt;
+languagesystem latn AZE;
+languagesystem latn CRT;
+languagesystem latn KAZ;
+languagesystem latn TAT;
+languagesystem latn TRK;
+languagesystem latn ROM;
+languagesystem latn MOL;
+languagesystem latn CAT;
+";
+name = Languagesystems;
 }
 );
 features = (
@@ -143,2407 +176,183 @@ code = "# GSUB feature: Standard Ligatures
 tag = liga;
 },
 {
-code = "# GPOS feature: Kerning
-# Lookups: 1
+automatic = 1;
+code = "lookup ccmp_Other_1 {
+	@CombiningTopAccents = [acutecomb brevecomb caroncomb circumflexcomb commaturnedabovecomb dieresiscomb dotaccentcomb gravecomb hungarumlautcomb macroncomb ringcomb tildecomb];
+	@CombiningNonTopAccents = [cedillacomb ogonekcomb];
+	sub [i j]' @CombiningTopAccents by [idotless jdotless];
+	sub [i j]' @CombiningNonTopAccents @CombiningTopAccents by [idotless jdotless];
+	@Markscomb = [dieresiscomb dotaccentcomb gravecomb acutecomb hungarumlautcomb caroncomb.alt circumflexcomb caroncomb brevecomb ringcomb tildecomb macroncomb commaturnedabovecomb commaaccentcomb cedillacomb ogonekcomb];
+	@MarkscombCase = [dieresiscomb.case dotaccentcomb.case gravecomb.case acutecomb.case hungarumlautcomb.case caroncomb.alt.case circumflexcomb.case caroncomb.case brevecomb.case ringcomb.case tildecomb.case macroncomb.case commaturnedabovecomb.case commaaccentcomb.case cedillacomb.case ogonekcomb.case];
+	sub @Markscomb @Markscomb' by @MarkscombCase;
+	sub @Uppercase @Markscomb' by @MarkscombCase;
+} ccmp_Other_1;
 
-@_V = [V W];
-@_z = [zcaron z];
-@_N = [N Ntilde];
-@_s = [s scaron];
-@_t = [t f_f_t.liga f_t.liga];
-@_U = [U Ugrave Uacute Ucircumflex Udieresis];
-@_H = [H I Igrave Iacute Icircumflex Idieresis];
-@_v = [v w y];
-@_E = [E OE AE Egrave Eacute Ecircumflex Edieresis];
-@_A = [A Agrave Aacute Acircumflex Atilde Adieresis Aring];
-@_a = [a agrave aacute acircumflex atilde adieresis aring];
-@_c = [c e oe ccedilla egrave eacute ecircumflex edieresis];
-@_k = [k f_f_k.liga f_k.liga];
-@_h = [h m n ntilde f_f_h.liga f_h.liga];
-@_D = [D O Q Eth Ograve Oacute Ocircumflex Otilde Odieresis Oslash];
-@_b = [b o ae ograve oacute ocircumflex otilde odieresis oslash thorn f_b.liga f_f_b.liga];
-@_d = [fl d l q u ugrave uacute ucircumflex udieresis dcroat f_f_l];
-@_i = [fi i igrave iacute icircumflex idieresis f_f_i];
-@_J = [breve dotaccent ring hungarumlaut ogonek caron dotlessi fraction Lslash lslash Zcaron space exclam quotedbl numbersign dollar percent ampersand quotesingle parenleft parenright asterisk plus hyphen slash zero one two three four five six seven eight nine colon semicolon less equal greater question at J M S T X Y Z bracketleft backslash bracketright asciicircum underscore grave b g t x y braceleft bar braceright asciitilde Euro dagger daggerdbl circumflex perthousand Scaron guilsinglleft quoteleft quoteright quotedblleft quotedblright bullet endash emdash tilde trademark guilsinglright Ydieresis uni00A0 exclamdown sterling currency yen brokenbar section dieresis copyright ordfeminine guillemotleft logicalnot minus registered macron degree plusminus twosuperior threesuperior acute paragraph periodcentered cedilla onesuperior ordmasculine guillemotright onequarter onehalf threequarters questiondown Ccedilla Eth multiply Yacute germandbls eth divide yacute ydieresis .notdef pi minute lessequal infinity arrowleft arrowup arrowright arrowdown second greaterequal partialdiff notequal approxequal emptyset product radical lozenge summation integral uni000A uni2116 Amacron amacron Aogonek aogonek Ccaron ccaron Cacute cacute Zacute zacute Dcaron dcaron Emacron emacron Edotaccent edotaccent Ecaron ecaron Eogonek eogonek uni0123 Iogonek iogonek Imacron imacron uni0136 uni013B uni013C Lcaron lcaron Lacute lacute uni0145 uni0146 Nacute nacute Ncaron ncaron Ohungarumlaut ohungarumlaut Omacron omacron Racute racute Rcaron rcaron uni0156 uni0157 Sacute sacute Tcaron tcaron Umacron umacron Uring uring Uhungarumlaut uhungarumlaut Uogonek uogonek uni0137 Zdotaccent zdotaccent uni0122 Dcroat dcroat uni20AA Abreve uni0218 abreve uni0219 uni021A uni021B Gbreve gbreve Idotaccent Scedilla scedilla Cdotaccent cdotaccent Gdotaccent gdotaccent Hbar hbar IJ ij Eng eng Ubreve ubreve Wcircumflex wcircumflex Ycircumflex ycircumflex uni0237 gravecomb acutecomb uni0302 tildecomb uni0304 uni0306 uni0307 uni0308 uni030A uni030B uni030C uni0312 uni0326 uni0327 uni0328 Wgrave wgrave Wacute wacute Wdieresis wdieresis Ygrave ygrave uni2074 uni2075 uni2076 uni2077 uni2078 uni2079 uni2081 uni2082 uni2083 uni2084 uni2085 uni2086 uni2087 uni2088 uni2089 lira uni2113 estimated zero.numr one.numr two.numr three.numr four.numr five.numr six.numr seven.numr eight.numr nine.numr zero.dnom one.dnom two.dnom three.dnom four.dnom five.dnom six.dnom seven.dnom eight.dnom nine.dnom zero.onum one.onum two.onum three.onum four.onum five.onum six.onum seven.onum eight.onum nine.onum arrowboth arrowupdn filledbox triagup triagdn circle openbullet uni20B4 dong colonmonetary onethird twothirds uni01CD uni01CE uni2196 uni2197 uni2198 uni2199 uni0000 uni000D uni00B5 uni0E3F Germandbls uni2016 uni20A6 uni20A8 uni20A9 uni20AD uni20AE uni20B1 uni20B2 uni20B5 uni20B8 uni20B9 uni20BA uni20BC uni20BD uni20BE uni20BF uni2126 uni2206 uni25A1 uni25AA uni25AB uni25B3 uni25B4 uni25B5 uni25B6 uni25B7 uni25B8 uni25B9 uni25BD uni25BE uni25BF uni25C0 uni25C1 uni25C2 uni25C3 uni25C6 uni25C7 uni25CF uni27E8 uni27E9 uni000D.1 zero.tf zero.zero one.tf two.tf three.tf four.tf five.tf six.tf seven.tf eight.tf nine.tf periodcentered.loclCAT periodcentered.loclCAT.case idotaccent uni030C.alt];
-@_v2 = [v w];
-@_h2 = [h k l];
-@_u = [u ugrave uacute ucircumflex udieresis];
-@_comma = [comma period quotesinglbase quotedblbase ellipsis];
-@_A2 = [A Agrave Aacute Acircumflex Atilde Adieresis Aring AE];
-@_a2 = [a agrave aacute acircumflex atilde adieresis aring ae];
-@_i2 = [i j m n p r igrave iacute icircumflex idieresis ntilde];
-@_C = [C G O Q OE Ograve Oacute Ocircumflex Otilde Odieresis Oslash];
-@_B = [B D E F K L P R Egrave Eacute Ecircumflex Edieresis Thorn thorn];
-@_c2 = [c d e o q oe cent ccedilla egrave eacute ecircumflex edieresis ograve oacute ocircumflex otilde odieresis oslash];
-@_f = [fi fl f f_f f_f_i f_f_l f_b.liga f_f_b.liga f_f_h.liga f_f_j.liga f_f_k.liga f_f_t.liga f_h.liga f_j.liga f_k.liga f_t.liga];
+lookup ccmp_Other_2 {
+	sub @Markscomb' @MarkscombCase by @MarkscombCase;
+	sub @MarkscombCase @Markscomb' by @MarkscombCase;
+} ccmp_Other_2;
 
+lookup ccmp_latn_1 {
+	sub fi by f i;
+	sub fl by f l;
+} ccmp_latn_1;
 
-  lookup kern {
-  # GPOS lookup 1, type 2 (Pair adjustment)
+script latn;
+lookup ccmp_latn_1;
+";
+tag = ccmp;
+},
+{
+automatic = 1;
+code = "lookup locl_latn_0 {
+	script latn;
+	language AZE;
+	sub i by idotaccent;
+	language CRT;
+	sub i by idotaccent;
+	language KAZ;
+	sub i by idotaccent;
+	language TAT;
+	sub i by idotaccent;
+	language TRK;
+	sub i by idotaccent;
+} locl_latn_0;
 
-    lookupflag IgnoreMarks;
-    pos space space -5;
-    pos space A -17;
-    pos space C -20;
-    pos space G -20;
-    pos space M -7;
-    pos space O -20;
-    pos space Q -20;
-    pos space T -20;
-    pos space U -10;
-    pos space V -35;
-    pos space W -35;
-    pos space Agrave -17;
-    pos space Aacute -17;
-    pos space Acircumflex -17;
-    pos space Atilde -17;
-    pos space Adieresis -17;
-    pos space Aring -17;
-    pos space AE -17;
-    pos space Ograve -20;
-    pos space Oacute -20;
-    pos space Ocircumflex -20;
-    pos space Otilde -20;
-    pos space Odieresis -20;
-    pos space Oslash -20;
-    pos space Ugrave -10;
-    pos space Uacute -10;
-    pos space Ucircumflex -10;
-    pos space Udieresis -10;
-    pos space OE -20;
-    pos parenleft zero -10;
-    pos parenleft three -14;
-    pos parenleft four -46;
-    pos parenleft five -20;
-    pos parenleft seven -30;
-    pos parenleft eight -20;
-    pos parenleft nine -14;
-    pos comma zero -40;
-    pos comma two 10;
-    pos comma six -50;
-    pos comma eight -20;
-    pos hyphen two -40;
-    pos hyphen three -20;
-    pos hyphen five -10;
-    pos hyphen seven -76;
-    pos hyphen nine -10;
-    pos period parenright -30;
-    pos period zero -40;
-    pos period two 10;
-    pos period six -50;
-    pos period seven -40;
-    pos period eight -20;
-    pos period nine -10;
-    pos zero percent -20;
-    pos zero parenright -10;
-    pos zero comma -40;
-    pos zero period -40;
-    pos zero two -18;
-    pos zero three -5;
-    pos zero seven -10;
-    pos zero nine -5;
-    pos zero degree -50;
-    pos zero quotesinglbase -40;
-    pos zero quotedblbase -40;
-    pos zero ellipsis -40;
-    pos zero perthousand -20;
-    pos one parenright -10;
-    pos one hyphen -12;
-    pos one zero -15;
-    pos one three -5;
-    pos one four -20;
-    pos one five -6;
-    pos one six -20;
-    pos one seven -20;
-    pos one eight -20;
-    pos one nine -20;
-    pos one c -27;
-    pos one d -27;
-    pos one e -27;
-    pos one o -27;
-    pos one q -27;
-    pos one cent -27;
-    pos one degree -50;
-    pos one ccedilla -27;
-    pos one egrave -27;
-    pos one eacute -27;
-    pos one ecircumflex -27;
-    pos one edieresis -27;
-    pos one ograve -27;
-    pos one oacute -27;
-    pos one ocircumflex -27;
-    pos one otilde -27;
-    pos one odieresis -27;
-    pos one oslash -27;
-    pos one oe -27;
-    pos two percent -20;
-    pos two parenright -30;
-    pos two comma -24;
-    pos two hyphen -20;
-    pos two period -24;
-    pos two four -10;
-    pos two six -10;
-    pos two eight -10;
-    pos two nine -10;
-    pos two c -6;
-    pos two d -6;
-    pos two e -6;
-    pos two o -6;
-    pos two q -6;
-    pos two cent -6;
-    pos two degree -20;
-    pos two ccedilla -6;
-    pos two egrave -6;
-    pos two eacute -6;
-    pos two ecircumflex -6;
-    pos two edieresis -6;
-    pos two ograve -6;
-    pos two oacute -6;
-    pos two ocircumflex -6;
-    pos two otilde -6;
-    pos two odieresis -6;
-    pos two oslash -6;
-    pos two oe -6;
-    pos two quotesinglbase -24;
-    pos two quotedblbase -24;
-    pos two ellipsis -24;
-    pos two perthousand -20;
-    pos three percent -50;
-    pos three parenright -46;
-    pos three comma -40;
-    pos three hyphen -7;
-    pos three period -40;
-    pos three zero -4;
-    pos three two -20;
-    pos three five -10;
-    pos three seven -44;
-    pos three eight -19;
-    pos three nine -18;
-    pos three c -10;
-    pos three d -10;
-    pos three e -10;
-    pos three o -10;
-    pos three q -10;
-    pos three cent -10;
-    pos three degree -72;
-    pos three ccedilla -10;
-    pos three egrave -10;
-    pos three eacute -10;
-    pos three ecircumflex -10;
-    pos three edieresis -10;
-    pos three ograve -10;
-    pos three oacute -10;
-    pos three ocircumflex -10;
-    pos three otilde -10;
-    pos three odieresis -10;
-    pos three oslash -10;
-    pos three oe -10;
-    pos three quotesinglbase -40;
-    pos three quotedblbase -40;
-    pos three ellipsis -40;
-    pos three perthousand -50;
-    pos four percent -60;
-    pos four parenright -30;
-    pos four comma -46;
-    pos four period -46;
-    pos four two -16;
-    pos four five -7;
-    pos four degree -99;
-    pos four quotesinglbase -46;
-    pos four quotedblbase -46;
-    pos four ellipsis -46;
-    pos four perthousand -60;
-    pos five percent -40;
-    pos five parenright -50;
-    pos five comma -40;
-    pos five period -40;
-    pos five two -18;
-    pos five nine -24;
-    pos five c -10;
-    pos five d -10;
-    pos five e -10;
-    pos five o -10;
-    pos five q -10;
-    pos five cent -10;
-    pos five degree -68;
-    pos five ccedilla -10;
-    pos five egrave -10;
-    pos five eacute -10;
-    pos five ecircumflex -10;
-    pos five edieresis -10;
-    pos five ograve -10;
-    pos five oacute -10;
-    pos five ocircumflex -10;
-    pos five otilde -10;
-    pos five odieresis -10;
-    pos five oslash -10;
-    pos five oe -10;
-    pos five quotesinglbase -40;
-    pos five quotedblbase -40;
-    pos five ellipsis -40;
-    pos five perthousand -40;
-    pos six percent -30;
-    pos six parenright -20;
-    pos six comma -34;
-    pos six period -34;
-    pos six seven -26;
-    pos six c -10;
-    pos six d -10;
-    pos six e -10;
-    pos six o -10;
-    pos six q -10;
-    pos six cent -10;
-    pos six degree -32;
-    pos six ccedilla -10;
-    pos six egrave -10;
-    pos six eacute -10;
-    pos six ecircumflex -10;
-    pos six edieresis -10;
-    pos six ograve -10;
-    pos six oacute -10;
-    pos six ocircumflex -10;
-    pos six otilde -10;
-    pos six odieresis -10;
-    pos six oslash -10;
-    pos six oe -10;
-    pos six quotesinglbase -34;
-    pos six quotedblbase -34;
-    pos six ellipsis -34;
-    pos six perthousand -30;
-    pos seven percent -10;
-    pos seven parenright -10;
-    pos seven comma -120;
-    pos seven hyphen -100;
-    pos seven period -120;
-    pos seven zero -34;
-    pos seven four -103;
-    pos seven five -14;
-    pos seven six -38;
-    pos seven eight -34;
-    pos seven nine -23;
-    pos seven c -124;
-    pos seven d -124;
-    pos seven e -124;
-    pos seven o -124;
-    pos seven q -124;
-    pos seven cent -124;
-    pos seven ccedilla -124;
-    pos seven egrave -124;
-    pos seven eacute -124;
-    pos seven ecircumflex -124;
-    pos seven edieresis -124;
-    pos seven ograve -124;
-    pos seven oacute -124;
-    pos seven ocircumflex -124;
-    pos seven otilde -124;
-    pos seven odieresis -124;
-    pos seven oslash -124;
-    pos seven oe -124;
-    pos seven quotesinglbase -120;
-    pos seven quotedblbase -120;
-    pos seven ellipsis -120;
-    pos seven perthousand -10;
-    pos eight percent -30;
-    pos eight parenright -20;
-    pos eight comma -30;
-    pos eight period -30;
-    pos eight two -26;
-    pos eight seven -38;
-    pos eight nine -14;
-    pos eight c -10;
-    pos eight d -10;
-    pos eight e -10;
-    pos eight o -10;
-    pos eight q -10;
-    pos eight cent -10;
-    pos eight degree -58;
-    pos eight ccedilla -10;
-    pos eight egrave -10;
-    pos eight eacute -10;
-    pos eight ecircumflex -10;
-    pos eight edieresis -10;
-    pos eight ograve -10;
-    pos eight oacute -10;
-    pos eight ocircumflex -10;
-    pos eight otilde -10;
-    pos eight odieresis -10;
-    pos eight oslash -10;
-    pos eight oe -10;
-    pos eight quotesinglbase -30;
-    pos eight quotedblbase -30;
-    pos eight ellipsis -30;
-    pos eight perthousand -30;
-    pos nine percent -20;
-    pos nine parenright -10;
-    pos nine comma -64;
-    pos nine period -64;
-    pos nine two -21;
-    pos nine three -4;
-    pos nine four -7;
-    pos nine seven -16;
-    pos nine nine -10;
-    pos nine c -10;
-    pos nine d -10;
-    pos nine e -10;
-    pos nine o -10;
-    pos nine q -10;
-    pos nine cent -10;
-    pos nine questiondown -84;
-    pos nine ccedilla -10;
-    pos nine egrave -10;
-    pos nine eacute -10;
-    pos nine ecircumflex -10;
-    pos nine edieresis -10;
-    pos nine ograve -10;
-    pos nine oacute -10;
-    pos nine ocircumflex -10;
-    pos nine otilde -10;
-    pos nine odieresis -10;
-    pos nine oslash -10;
-    pos nine oe -10;
-    pos nine quotesinglbase -64;
-    pos nine quotedblbase -64;
-    pos nine ellipsis -64;
-    pos nine perthousand -20;
-    pos question space -35;
-    pos A space -25;
-    pos A J -15;
-    pos A T -113;
-    pos A Y -149;
-    pos A g -10;
-    pos A y -85;
-    pos B space -10;
-    pos B comma -19;
-    pos B period -19;
-    pos B question -30;
-    pos B A -37;
-    pos B B -13;
-    pos B D -13;
-    pos B E -13;
-    pos B F -13;
-    pos B H -4;
-    pos B I -4;
-    pos B J -7;
-    pos B K -13;
-    pos B L -13;
-    pos B N -13;
-    pos B P -13;
-    pos B R -13;
-    pos B T -54;
-    pos B U -20;
-    pos B V -69;
-    pos B W -69;
-    pos B Y -85;
-    pos B Z -24;
-    pos B h -22;
-    pos B i -22;
-    pos B j -22;
-    pos B k -22;
-    pos B l -22;
-    pos B m -22;
-    pos B n -22;
-    pos B p -22;
-    pos B r -22;
-    pos B t -33;
-    pos B v -17;
-    pos B w -17;
-    pos B z -22;
-    pos B Agrave -37;
-    pos B Aacute -37;
-    pos B Acircumflex -37;
-    pos B Atilde -37;
-    pos B Adieresis -37;
-    pos B Aring -37;
-    pos B AE -37;
-    pos B Egrave -13;
-    pos B Eacute -13;
-    pos B Ecircumflex -13;
-    pos B Edieresis -13;
-    pos B Igrave -4;
-    pos B Iacute -4;
-    pos B Icircumflex -4;
-    pos B Idieresis -4;
-    pos B Ntilde -13;
-    pos B Ugrave -20;
-    pos B Uacute -20;
-    pos B Ucircumflex -20;
-    pos B Udieresis -20;
-    pos B Thorn -13;
-    pos B igrave -22;
-    pos B iacute -22;
-    pos B icircumflex -22;
-    pos B idieresis -22;
-    pos B ntilde -22;
-    pos B thorn -13;
-    pos B zcaron -22;
-    pos B quotesinglbase -19;
-    pos B quotedblbase -19;
-    pos B ellipsis -19;
-    pos C space -7;
-    pos C B -5;
-    pos C C -23;
-    pos C D -5;
-    pos C E -5;
-    pos C F -5;
-    pos C G -23;
-    pos C K -5;
-    pos C L -5;
-    pos C O -23;
-    pos C P -5;
-    pos C Q -23;
-    pos C R -5;
-    pos C b 17;
-    pos C c -9;
-    pos C d -9;
-    pos C e -9;
-    pos C o -9;
-    pos C q -9;
-    pos C t -31;
-    pos C v -27;
-    pos C w -27;
-    pos C y -25;
-    pos C cent -9;
-    pos C Egrave -5;
-    pos C Eacute -5;
-    pos C Ecircumflex -5;
-    pos C Edieresis -5;
-    pos C Ograve -23;
-    pos C Oacute -23;
-    pos C Ocircumflex -23;
-    pos C Otilde -23;
-    pos C Odieresis -23;
-    pos C Oslash -23;
-    pos C Thorn -5;
-    pos C ccedilla -9;
-    pos C egrave -9;
-    pos C eacute -9;
-    pos C ecircumflex -9;
-    pos C edieresis -9;
-    pos C ograve -9;
-    pos C oacute -9;
-    pos C ocircumflex -9;
-    pos C otilde -9;
-    pos C odieresis -9;
-    pos C oslash -9;
-    pos C thorn -5;
-    pos C OE -23;
-    pos C oe -9;
-    pos D space -20;
-    pos D J -20;
-    pos D M -30;
-    pos D T -33;
-    pos D X -69;
-    pos D Y -88;
-    pos D Z -28;
-    pos D b -4;
-    pos D g -32;
-    pos D t -22;
-    pos D x -17;
-    pos D y 13;
-    pos E space -5;
-    pos E J -13;
-    pos E g -13;
-    pos E y -11;
-    pos F space -20;
-    pos F comma -80;
-    pos F period -80;
-    pos F A -107;
-    pos F C -23;
-    pos F G -23;
-    pos F O -23;
-    pos F Q -23;
-    pos F a -99;
-    pos F c -93;
-    pos F d -93;
-    pos F e -93;
-    pos F h -5;
-    pos F i -18;
-    pos F j -18;
-    pos F k -5;
-    pos F l -5;
-    pos F m -18;
-    pos F n -18;
-    pos F o -93;
-    pos F p -18;
-    pos F q -93;
-    pos F r -18;
-    pos F s -58;
-    pos F t -44;
-    pos F u -49;
-    pos F y -28;
-    pos F cent -93;
-    pos F Agrave -107;
-    pos F Aacute -107;
-    pos F Acircumflex -107;
-    pos F Atilde -107;
-    pos F Adieresis -107;
-    pos F Aring -107;
-    pos F AE -107;
-    pos F Ograve -23;
-    pos F Oacute -23;
-    pos F Ocircumflex -23;
-    pos F Otilde -23;
-    pos F Odieresis -23;
-    pos F Oslash -23;
-    pos F agrave -99;
-    pos F aacute -99;
-    pos F acircumflex -99;
-    pos F atilde -99;
-    pos F adieresis -99;
-    pos F aring -99;
-    pos F ae -99;
-    pos F ccedilla -93;
-    pos F egrave -93;
-    pos F eacute -93;
-    pos F ecircumflex -93;
-    pos F edieresis -93;
-    pos F igrave -18;
-    pos F iacute -18;
-    pos F icircumflex -18;
-    pos F idieresis -18;
-    pos F ntilde -18;
-    pos F ograve -93;
-    pos F oacute -93;
-    pos F ocircumflex -93;
-    pos F otilde -93;
-    pos F odieresis -93;
-    pos F oslash -93;
-    pos F ugrave -49;
-    pos F uacute -49;
-    pos F ucircumflex -49;
-    pos F udieresis -49;
-    pos F OE -23;
-    pos F oe -93;
-    pos F scaron -58;
-    pos F quotesinglbase -80;
-    pos F quotedblbase -80;
-    pos F ellipsis -80;
-    pos G space -8;
-    pos G comma -34;
-    pos G period -34;
-    pos G A -27;
-    pos G B -5;
-    pos G D -5;
-    pos G E -5;
-    pos G F -5;
-    pos G H -5;
-    pos G I -5;
-    pos G K -5;
-    pos G L -5;
-    pos G M -19;
-    pos G N -20;
-    pos G P -5;
-    pos G R -5;
-    pos G T -28;
-    pos G V -46;
-    pos G W -46;
-    pos G Y -48;
-    pos G a -13;
-    pos G c -9;
-    pos G d -9;
-    pos G e -9;
-    pos G h -24;
-    pos G i -22;
-    pos G j -22;
-    pos G k -24;
-    pos G l -24;
-    pos G m -22;
-    pos G n -22;
-    pos G o -9;
-    pos G p -22;
-    pos G q -9;
-    pos G r -22;
-    pos G s -4;
-    pos G t -36;
-    pos G u -23;
-    pos G v -9;
-    pos G w -9;
-    pos G y -9;
-    pos G z -12;
-    pos G cent -9;
-    pos G Agrave -27;
-    pos G Aacute -27;
-    pos G Acircumflex -27;
-    pos G Atilde -27;
-    pos G Adieresis -27;
-    pos G Aring -27;
-    pos G AE -27;
-    pos G Egrave -5;
-    pos G Eacute -5;
-    pos G Ecircumflex -5;
-    pos G Edieresis -5;
-    pos G Igrave -5;
-    pos G Iacute -5;
-    pos G Icircumflex -5;
-    pos G Idieresis -5;
-    pos G Ntilde -20;
-    pos G Thorn -5;
-    pos G agrave -13;
-    pos G aacute -13;
-    pos G acircumflex -13;
-    pos G atilde -13;
-    pos G adieresis -13;
-    pos G aring -13;
-    pos G ae -13;
-    pos G ccedilla -9;
-    pos G egrave -9;
-    pos G eacute -9;
-    pos G ecircumflex -9;
-    pos G edieresis -9;
-    pos G igrave -22;
-    pos G iacute -22;
-    pos G icircumflex -22;
-    pos G idieresis -22;
-    pos G ntilde -22;
-    pos G ograve -9;
-    pos G oacute -9;
-    pos G ocircumflex -9;
-    pos G otilde -9;
-    pos G odieresis -9;
-    pos G oslash -9;
-    pos G ugrave -23;
-    pos G uacute -23;
-    pos G ucircumflex -23;
-    pos G udieresis -23;
-    pos G thorn -5;
-    pos G oe -9;
-    pos G scaron -4;
-    pos G zcaron -12;
-    pos G quotesinglbase -34;
-    pos G quotedblbase -34;
-    pos G ellipsis -34;
-    pos H Y -45;
-    pos H g -28;
-    pos H t -48;
-    pos H x -4;
-    pos H y -5;
-    pos H quoteright -4;
-    pos I Y -45;
-    pos I g -28;
-    pos I t -48;
-    pos I x -4;
-    pos I y -5;
-    pos I quoteright -4;
-    pos J A -22;
-    pos J B -20;
-    pos J C -18;
-    pos J D -20;
-    pos J E -20;
-    pos J F -20;
-    pos J G -18;
-    pos J K -20;
-    pos J L -20;
-    pos J O -18;
-    pos J P -20;
-    pos J Q -18;
-    pos J R -20;
-    pos J U -10;
-    pos J a -18;
-    pos J c -34;
-    pos J d -34;
-    pos J e -34;
-    pos J h -11;
-    pos J i -23;
-    pos J j -23;
-    pos J k -11;
-    pos J l -11;
-    pos J m -23;
-    pos J n -23;
-    pos J o -34;
-    pos J p -23;
-    pos J q -34;
-    pos J r -23;
-    pos J u -21;
-    pos J cent -34;
-    pos J Agrave -22;
-    pos J Aacute -22;
-    pos J Acircumflex -22;
-    pos J Atilde -22;
-    pos J Adieresis -22;
-    pos J Aring -22;
-    pos J AE -22;
-    pos J Egrave -20;
-    pos J Eacute -20;
-    pos J Ecircumflex -20;
-    pos J Edieresis -20;
-    pos J Ograve -18;
-    pos J Oacute -18;
-    pos J Ocircumflex -18;
-    pos J Otilde -18;
-    pos J Odieresis -18;
-    pos J Oslash -18;
-    pos J Ugrave -10;
-    pos J Uacute -10;
-    pos J Ucircumflex -10;
-    pos J Udieresis -10;
-    pos J Thorn -20;
-    pos J agrave -18;
-    pos J aacute -18;
-    pos J acircumflex -18;
-    pos J atilde -18;
-    pos J adieresis -18;
-    pos J aring -18;
-    pos J ae -18;
-    pos J ccedilla -34;
-    pos J egrave -34;
-    pos J eacute -34;
-    pos J ecircumflex -34;
-    pos J edieresis -34;
-    pos J igrave -23;
-    pos J iacute -23;
-    pos J icircumflex -23;
-    pos J idieresis -23;
-    pos J ntilde -23;
-    pos J ograve -34;
-    pos J oacute -34;
-    pos J ocircumflex -34;
-    pos J otilde -34;
-    pos J odieresis -34;
-    pos J oslash -34;
-    pos J ugrave -21;
-    pos J uacute -21;
-    pos J ucircumflex -21;
-    pos J udieresis -21;
-    pos J thorn -20;
-    pos J OE -18;
-    pos J oe -34;
-    pos K space -12;
-    pos K C -92;
-    pos K G -92;
-    pos K H -24;
-    pos K I -24;
-    pos K O -92;
-    pos K Q -92;
-    pos K S -4;
-    pos K U -66;
-    pos K V -88;
-    pos K W -88;
-    pos K Y -110;
-    pos K a -14;
-    pos K c -54;
-    pos K d -54;
-    pos K e -54;
-    pos K h -6;
-    pos K i -8;
-    pos K j -8;
-    pos K k -6;
-    pos K l -6;
-    pos K m -8;
-    pos K n -8;
-    pos K o -54;
-    pos K p -8;
-    pos K q -54;
-    pos K r -8;
-    pos K u -38;
-    pos K v -97;
-    pos K w -97;
-    pos K y -84;
-    pos K cent -54;
-    pos K Igrave -24;
-    pos K Iacute -24;
-    pos K Icircumflex -24;
-    pos K Idieresis -24;
-    pos K Ograve -92;
-    pos K Oacute -92;
-    pos K Ocircumflex -92;
-    pos K Otilde -92;
-    pos K Odieresis -92;
-    pos K Oslash -92;
-    pos K Ugrave -66;
-    pos K Uacute -66;
-    pos K Ucircumflex -66;
-    pos K Udieresis -66;
-    pos K agrave -14;
-    pos K aacute -14;
-    pos K acircumflex -14;
-    pos K atilde -14;
-    pos K adieresis -14;
-    pos K aring -14;
-    pos K ae -14;
-    pos K ccedilla -54;
-    pos K egrave -54;
-    pos K eacute -54;
-    pos K ecircumflex -54;
-    pos K edieresis -54;
-    pos K igrave -8;
-    pos K iacute -8;
-    pos K icircumflex -8;
-    pos K idieresis -8;
-    pos K ntilde -8;
-    pos K ograve -54;
-    pos K oacute -54;
-    pos K ocircumflex -54;
-    pos K otilde -54;
-    pos K odieresis -54;
-    pos K oslash -54;
-    pos K ugrave -38;
-    pos K uacute -38;
-    pos K ucircumflex -38;
-    pos K udieresis -38;
-    pos K OE -92;
-    pos K oe -54;
-    pos L space -10;
-    pos L A 2;
-    pos L B -9;
-    pos L C -27;
-    pos L D -9;
-    pos L E -9;
-    pos L F -9;
-    pos L G -27;
-    pos L K -9;
-    pos L L -9;
-    pos L O -27;
-    pos L P -9;
-    pos L Q -27;
-    pos L R -9;
-    pos L T -120;
-    pos L U -23;
-    pos L V -124;
-    pos L W -124;
-    pos L Y -126;
-    pos L c -4;
-    pos L d -4;
-    pos L e -4;
-    pos L h -3;
-    pos L k -3;
-    pos L l -3;
-    pos L o -4;
-    pos L q -4;
-    pos L t -34;
-    pos L u -14;
-    pos L v -39;
-    pos L w -39;
-    pos L y -34;
-    pos L cent -4;
-    pos L Agrave 2;
-    pos L Aacute 2;
-    pos L Acircumflex 2;
-    pos L Atilde 2;
-    pos L Adieresis 2;
-    pos L Aring 2;
-    pos L AE 2;
-    pos L Egrave -9;
-    pos L Eacute -9;
-    pos L Ecircumflex -9;
-    pos L Edieresis -9;
-    pos L Ograve -27;
-    pos L Oacute -27;
-    pos L Ocircumflex -27;
-    pos L Otilde -27;
-    pos L Odieresis -27;
-    pos L Oslash -27;
-    pos L Ugrave -23;
-    pos L Uacute -23;
-    pos L Ucircumflex -23;
-    pos L Udieresis -23;
-    pos L Thorn -9;
-    pos L ccedilla -4;
-    pos L egrave -4;
-    pos L eacute -4;
-    pos L ecircumflex -4;
-    pos L edieresis -4;
-    pos L ograve -4;
-    pos L oacute -4;
-    pos L ocircumflex -4;
-    pos L otilde -4;
-    pos L odieresis -4;
-    pos L oslash -4;
-    pos L ugrave -14;
-    pos L uacute -14;
-    pos L ucircumflex -14;
-    pos L udieresis -14;
-    pos L thorn -9;
-    pos L OE -27;
-    pos L oe -4;
-    pos M space -7;
-    pos M C -25;
-    pos M G -25;
-    pos M O -25;
-    pos M Q -25;
-    pos M T -37;
-    pos M U -10;
-    pos M V -44;
-    pos M W -44;
-    pos M Y -32;
-    pos M c -24;
-    pos M d -24;
-    pos M e -24;
-    pos M i -11;
-    pos M j -11;
-    pos M m -11;
-    pos M n -11;
-    pos M o -24;
-    pos M p -11;
-    pos M q -24;
-    pos M r -11;
-    pos M t -38;
-    pos M u -16;
-    pos M cent -24;
-    pos M Ograve -25;
-    pos M Oacute -25;
-    pos M Ocircumflex -25;
-    pos M Otilde -25;
-    pos M Odieresis -25;
-    pos M Oslash -25;
-    pos M Ugrave -10;
-    pos M Uacute -10;
-    pos M Ucircumflex -10;
-    pos M Udieresis -10;
-    pos M ccedilla -24;
-    pos M egrave -24;
-    pos M eacute -24;
-    pos M ecircumflex -24;
-    pos M edieresis -24;
-    pos M igrave -11;
-    pos M iacute -11;
-    pos M icircumflex -11;
-    pos M idieresis -11;
-    pos M ntilde -11;
-    pos M ograve -24;
-    pos M oacute -24;
-    pos M ocircumflex -24;
-    pos M otilde -24;
-    pos M odieresis -24;
-    pos M oslash -24;
-    pos M ugrave -16;
-    pos M uacute -16;
-    pos M ucircumflex -16;
-    pos M udieresis -16;
-    pos M OE -25;
-    pos M oe -24;
-    pos N space -13;
-    pos N S -16;
-    pos N T -3;
-    pos N quoteright 8;
-    pos O space -20;
-    pos O J -20;
-    pos O M -30;
-    pos O T -33;
-    pos O X -69;
-    pos O Y -88;
-    pos O Z -28;
-    pos O b -4;
-    pos O g -32;
-    pos O t -22;
-    pos O x -17;
-    pos O y 13;
-    pos P space -25;
-    pos P A -115;
-    pos P B -17;
-    pos P D -17;
-    pos P E -17;
-    pos P F -17;
-    pos P H -17;
-    pos P I -17;
-    pos P J -10;
-    pos P K -17;
-    pos P L -17;
-    pos P M -29;
-    pos P N -20;
-    pos P P -17;
-    pos P R -17;
-    pos P Y -16;
-    pos P Z -29;
-    pos P c -64;
-    pos P d -64;
-    pos P e -64;
-    pos P g -54;
-    pos P h -14;
-    pos P k -14;
-    pos P l -14;
-    pos P o -64;
-    pos P q -64;
-    pos P s -23;
-    pos P t -6;
-    pos P u 8;
-    pos P v 40;
-    pos P w 40;
-    pos P y 40;
-    pos P cent -64;
-    pos P Agrave -115;
-    pos P Aacute -115;
-    pos P Acircumflex -115;
-    pos P Atilde -115;
-    pos P Adieresis -115;
-    pos P Aring -115;
-    pos P AE -115;
-    pos P Egrave -17;
-    pos P Eacute -17;
-    pos P Ecircumflex -17;
-    pos P Edieresis -17;
-    pos P Igrave -17;
-    pos P Iacute -17;
-    pos P Icircumflex -17;
-    pos P Idieresis -17;
-    pos P Ntilde -20;
-    pos P Thorn -17;
-    pos P ccedilla -64;
-    pos P egrave -64;
-    pos P eacute -64;
-    pos P ecircumflex -64;
-    pos P edieresis -64;
-    pos P ograve -64;
-    pos P oacute -64;
-    pos P ocircumflex -64;
-    pos P otilde -64;
-    pos P odieresis -64;
-    pos P oslash -64;
-    pos P ugrave 8;
-    pos P uacute 8;
-    pos P ucircumflex 8;
-    pos P udieresis 8;
-    pos P thorn -17;
-    pos P oe -64;
-    pos P scaron -23;
-    pos Q space -20;
-    pos Q J -20;
-    pos Q M -30;
-    pos Q T -33;
-    pos Q X -69;
-    pos Q Y -88;
-    pos Q Z -28;
-    pos Q b -4;
-    pos Q g -32;
-    pos Q t -22;
-    pos Q x -17;
-    pos Q y 13;
-    pos R space -13;
-    pos R B -17;
-    pos R C -58;
-    pos R D -17;
-    pos R E -17;
-    pos R F -17;
-    pos R G -58;
-    pos R H -17;
-    pos R I -17;
-    pos R K -17;
-    pos R L -17;
-    pos R N -11;
-    pos R O -58;
-    pos R P -17;
-    pos R Q -58;
-    pos R R -17;
-    pos R T -36;
-    pos R U -57;
-    pos R V -78;
-    pos R W -78;
-    pos R X -27;
-    pos R Y -90;
-    pos R c -51;
-    pos R d -51;
-    pos R e -51;
-    pos R h -8;
-    pos R i -8;
-    pos R j -8;
-    pos R k -8;
-    pos R l -8;
-    pos R m -8;
-    pos R n -8;
-    pos R o -51;
-    pos R p -8;
-    pos R q -51;
-    pos R r -8;
-    pos R t -54;
-    pos R u -38;
-    pos R v -34;
-    pos R w -34;
-    pos R y -34;
-    pos R cent -51;
-    pos R Egrave -17;
-    pos R Eacute -17;
-    pos R Ecircumflex -17;
-    pos R Edieresis -17;
-    pos R Igrave -17;
-    pos R Iacute -17;
-    pos R Icircumflex -17;
-    pos R Idieresis -17;
-    pos R Ntilde -11;
-    pos R Ograve -58;
-    pos R Oacute -58;
-    pos R Ocircumflex -58;
-    pos R Otilde -58;
-    pos R Odieresis -58;
-    pos R Oslash -58;
-    pos R Ugrave -57;
-    pos R Uacute -57;
-    pos R Ucircumflex -57;
-    pos R Udieresis -57;
-    pos R Thorn -17;
-    pos R ccedilla -51;
-    pos R egrave -51;
-    pos R eacute -51;
-    pos R ecircumflex -51;
-    pos R edieresis -51;
-    pos R igrave -8;
-    pos R iacute -8;
-    pos R icircumflex -8;
-    pos R idieresis -8;
-    pos R ntilde -8;
-    pos R ograve -51;
-    pos R oacute -51;
-    pos R ocircumflex -51;
-    pos R otilde -51;
-    pos R odieresis -51;
-    pos R oslash -51;
-    pos R ugrave -38;
-    pos R uacute -38;
-    pos R ucircumflex -38;
-    pos R udieresis -38;
-    pos R thorn -17;
-    pos R OE -58;
-    pos R oe -51;
-    pos S space -5;
-    pos S comma -7;
-    pos S period -7;
-    pos S B -4;
-    pos S D -4;
-    pos S E -4;
-    pos S F -4;
-    pos S H -4;
-    pos S I -4;
-    pos S K -4;
-    pos S L -4;
-    pos S P -4;
-    pos S R -4;
-    pos S T -24;
-    pos S U -6;
-    pos S V -5;
-    pos S W -5;
-    pos S X -20;
-    pos S Y -23;
-    pos S g -8;
-    pos S h -5;
-    pos S i -4;
-    pos S j -4;
-    pos S k -5;
-    pos S l -5;
-    pos S m -4;
-    pos S n -4;
-    pos S p -4;
-    pos S r -4;
-    pos S t -23;
-    pos S u -2;
-    pos S v -18;
-    pos S w -18;
-    pos S y -15;
-    pos S Egrave -4;
-    pos S Eacute -4;
-    pos S Ecircumflex -4;
-    pos S Edieresis -4;
-    pos S Igrave -4;
-    pos S Iacute -4;
-    pos S Icircumflex -4;
-    pos S Idieresis -4;
-    pos S Ugrave -6;
-    pos S Uacute -6;
-    pos S Ucircumflex -6;
-    pos S Udieresis -6;
-    pos S Thorn -4;
-    pos S igrave -4;
-    pos S iacute -4;
-    pos S icircumflex -4;
-    pos S idieresis -4;
-    pos S ntilde -4;
-    pos S ugrave -2;
-    pos S uacute -2;
-    pos S ucircumflex -2;
-    pos S udieresis -2;
-    pos S thorn -4;
-    pos S quotesinglbase -7;
-    pos S quotedblbase -7;
-    pos S ellipsis -7;
-    pos T space -20;
-    pos T comma -110;
-    pos T period -110;
-    pos T A -132;
-    pos T C -33;
-    pos T G -33;
-    pos T H -1;
-    pos T I -1;
-    pos T M -6;
-    pos T O -33;
-    pos T Q -33;
-    pos T Z -33;
-    pos T c -143;
-    pos T d -143;
-    pos T e -143;
-    pos T i -81;
-    pos T j -81;
-    pos T m -81;
-    pos T n -81;
-    pos T o -143;
-    pos T p -81;
-    pos T q -143;
-    pos T r -81;
-    pos T s -103;
-    pos T u -84;
-    pos T v -98;
-    pos T w -98;
-    pos T x -100;
-    pos T y -98;
-    pos T z -108;
-    pos T cent -143;
-    pos T Agrave -132;
-    pos T Aacute -132;
-    pos T Acircumflex -132;
-    pos T Atilde -132;
-    pos T Adieresis -132;
-    pos T Aring -132;
-    pos T AE -132;
-    pos T Igrave -1;
-    pos T Iacute -1;
-    pos T Icircumflex -1;
-    pos T Idieresis -1;
-    pos T Ograve -33;
-    pos T Oacute -33;
-    pos T Ocircumflex -33;
-    pos T Otilde -33;
-    pos T Odieresis -33;
-    pos T Oslash -33;
-    pos T ccedilla -143;
-    pos T egrave -143;
-    pos T eacute -143;
-    pos T ecircumflex -143;
-    pos T edieresis -143;
-    pos T igrave -81;
-    pos T iacute -81;
-    pos T icircumflex -81;
-    pos T idieresis -81;
-    pos T ntilde -51;
-    pos T ograve -143;
-    pos T oacute -143;
-    pos T ocircumflex -143;
-    pos T otilde -143;
-    pos T odieresis -143;
-    pos T oslash -143;
-    pos T ugrave -84;
-    pos T uacute -84;
-    pos T ucircumflex -84;
-    pos T udieresis -84;
-    pos T OE -33;
-    pos T oe -143;
-    pos T scaron -103;
-    pos T zcaron -108;
-    pos T quotesinglbase -110;
-    pos T quotedblbase -110;
-    pos T ellipsis -110;
-    pos U space -20;
-    pos U J -35;
-    pos U M -38;
-    pos U S -23;
-    pos U X -13;
-    pos U Z -42;
-    pos U g -72;
-    pos U t -51;
-    pos U x -43;
-    pos V space -50;
-    pos V M -33;
-    pos V S -18;
-    pos V T 4;
-    pos V t -78;
-    pos V y -14;
-    pos W space -50;
-    pos W M -33;
-    pos W S -18;
-    pos W T 4;
-    pos W t -78;
-    pos W y -14;
-    pos X space -11;
-    pos X T -10;
-    pos X c -57;
-    pos X d -57;
-    pos X e -57;
-    pos X o -57;
-    pos X q -57;
-    pos X v -46;
-    pos X w -46;
-    pos X y -46;
-    pos X cent -57;
-    pos X ccedilla -57;
-    pos X egrave -57;
-    pos X eacute -57;
-    pos X ecircumflex -57;
-    pos X edieresis -57;
-    pos X ograve -57;
-    pos X oacute -57;
-    pos X ocircumflex -57;
-    pos X otilde -57;
-    pos X odieresis -57;
-    pos X oslash -57;
-    pos X oe -57;
-    pos Y space -20;
-    pos Y A -133;
-    pos Y B -21;
-    pos Y C -85;
-    pos Y D -21;
-    pos Y E -21;
-    pos Y F -21;
-    pos Y G -85;
-    pos Y H -20;
-    pos Y I -20;
-    pos Y K -21;
-    pos Y L -21;
-    pos Y O -85;
-    pos Y P -21;
-    pos Y Q -85;
-    pos Y R -21;
-    pos Y S -24;
-    pos Y Z -30;
-    pos Y a -144;
-    pos Y c -169;
-    pos Y d -169;
-    pos Y e -169;
-    pos Y i -44;
-    pos Y j -44;
-    pos Y m -44;
-    pos Y n -44;
-    pos Y o -169;
-    pos Y p -44;
-    pos Y q -169;
-    pos Y r -44;
-    pos Y s -133;
-    pos Y u -76;
-    pos Y cent -169;
-    pos Y Agrave -133;
-    pos Y Aacute -133;
-    pos Y Acircumflex -133;
-    pos Y Atilde -133;
-    pos Y Adieresis -133;
-    pos Y Aring -133;
-    pos Y AE -133;
-    pos Y Egrave -21;
-    pos Y Eacute -21;
-    pos Y Ecircumflex -21;
-    pos Y Edieresis -21;
-    pos Y Igrave -20;
-    pos Y Iacute -20;
-    pos Y Icircumflex -20;
-    pos Y Idieresis -20;
-    pos Y Ograve -85;
-    pos Y Oacute -85;
-    pos Y Ocircumflex -85;
-    pos Y Otilde -85;
-    pos Y Odieresis -85;
-    pos Y Oslash -85;
-    pos Y Thorn -21;
-    pos Y agrave -144;
-    pos Y aacute -144;
-    pos Y acircumflex -144;
-    pos Y atilde -144;
-    pos Y adieresis -144;
-    pos Y aring -144;
-    pos Y ae -144;
-    pos Y ccedilla -169;
-    pos Y egrave -169;
-    pos Y eacute -169;
-    pos Y ecircumflex -169;
-    pos Y edieresis -169;
-    pos Y igrave -44;
-    pos Y iacute -44;
-    pos Y icircumflex -44;
-    pos Y idieresis -44;
-    pos Y ntilde -44;
-    pos Y ograve -169;
-    pos Y oacute -169;
-    pos Y ocircumflex -169;
-    pos Y otilde -169;
-    pos Y odieresis -169;
-    pos Y oslash -169;
-    pos Y ugrave -76;
-    pos Y uacute -76;
-    pos Y ucircumflex -76;
-    pos Y udieresis -76;
-    pos Y thorn -21;
-    pos Y OE -85;
-    pos Y oe -169;
-    pos Y scaron -133;
-    pos Y quoteright 18;
-    pos Z space -14;
-    pos Z C -10;
-    pos Z G -10;
-    pos Z O -10;
-    pos Z Q -10;
-    pos Z T -20;
-    pos Z u -7;
-    pos Z v -13;
-    pos Z w -13;
-    pos Z y -13;
-    pos Z Ograve -10;
-    pos Z Oacute -10;
-    pos Z Ocircumflex -10;
-    pos Z Otilde -10;
-    pos Z Odieresis -10;
-    pos Z Oslash -10;
-    pos Z ugrave -7;
-    pos Z uacute -7;
-    pos Z ucircumflex -7;
-    pos Z udieresis -7;
-    pos Z OE -10;
-    pos a i -10;
-    pos a j -10;
-    pos a m -10;
-    pos a n -10;
-    pos a o -20;
-    pos a p -10;
-    pos a r -10;
-    pos a t -40;
-    pos a u -25;
-    pos a w -50;
-    pos a y -35;
-    pos a igrave -10;
-    pos a iacute -10;
-    pos a icircumflex -10;
-    pos a idieresis -10;
-    pos a ntilde -10;
-    pos a ugrave -25;
-    pos a uacute -25;
-    pos a ucircumflex -25;
-    pos a udieresis -25;
-    pos b comma -10;
-    pos b period -45;
-    pos b question -30;
-    pos b b -5;
-    pos b g -20;
-    pos b t -45;
-    pos b w -20;
-    pos b x -25;
-    pos c comma -20;
-    pos c b -10;
-    pos c g -25;
-    pos c t -30;
-    pos c v -25;
-    pos c x -30;
-    pos d b 10;
-    pos d g -5;
-    pos d t -35;
-    pos d w 20;
-    pos d quoteright -70;
-    pos e comma -20;
-    pos e b -10;
-    pos e g -20;
-    pos e x -14;
-    pos f g -5;
-    pos f o -10;
-    pos g period -20;
-    pos g a -10;
-    pos g c -50;
-    pos g d -50;
-    pos g e -50;
-    pos g o -50;
-    pos g q -50;
-    pos g s -10;
-    pos g t -25;
-    pos g u -30;
-    pos g v -50;
-    pos g w -50;
-    pos g cent -50;
-    pos g agrave -10;
-    pos g aacute -10;
-    pos g acircumflex -10;
-    pos g atilde -10;
-    pos g adieresis -10;
-    pos g aring -10;
-    pos g ae -10;
-    pos g ccedilla -50;
-    pos g egrave -50;
-    pos g eacute -50;
-    pos g ecircumflex -50;
-    pos g edieresis -50;
-    pos g ograve -50;
-    pos g oacute -50;
-    pos g ocircumflex -50;
-    pos g otilde -50;
-    pos g odieresis -50;
-    pos g oslash -50;
-    pos g ugrave -30;
-    pos g uacute -30;
-    pos g ucircumflex -30;
-    pos g udieresis -30;
-    pos g oe -50;
-    pos g scaron -10;
-    pos h comma -15;
-    pos h b 5;
-    pos h c -30;
-    pos h g -15;
-    pos h t -45;
-    pos h w -10;
-    pos h quoteright -95;
-    pos i b 20;
-    pos i o -10;
-    pos i t -15;
-    pos i quoteright -30;
-    pos j a -20;
-    pos j b 12;
-    pos j c -10;
-    pos j d -10;
-    pos j e -10;
-    pos j h -15;
-    pos j i -5;
-    pos j j -5;
-    pos j k -15;
-    pos j l -15;
-    pos j m -5;
-    pos j n -5;
-    pos j o -15;
-    pos j p -5;
-    pos j q -10;
-    pos j r -5;
-    pos j s -5;
-    pos j u -15;
-    pos j cent -10;
-    pos j agrave -20;
-    pos j aacute -20;
-    pos j acircumflex -20;
-    pos j atilde -20;
-    pos j adieresis -20;
-    pos j aring -20;
-    pos j ae -20;
-    pos j ccedilla -10;
-    pos j egrave -10;
-    pos j eacute -10;
-    pos j ecircumflex -10;
-    pos j edieresis -10;
-    pos j igrave -5;
-    pos j iacute -5;
-    pos j icircumflex -5;
-    pos j idieresis -5;
-    pos j ntilde -5;
-    pos j ograve -10;
-    pos j oacute -10;
-    pos j ocircumflex -10;
-    pos j otilde -10;
-    pos j odieresis -10;
-    pos j oslash -10;
-    pos j ugrave -15;
-    pos j uacute -15;
-    pos j ucircumflex -15;
-    pos j udieresis -15;
-    pos j oe -10;
-    pos j scaron -5;
-    pos k u -30;
-    pos k w -20;
-    pos l b 10;
-    pos l g -5;
-    pos l t -35;
-    pos l w 20;
-    pos l quoteright -70;
-    pos m comma -15;
-    pos m b 5;
-    pos m c -30;
-    pos m g -15;
-    pos m t -45;
-    pos m w -10;
-    pos m quoteright -95;
-    pos n comma -15;
-    pos n b 5;
-    pos n c -30;
-    pos n d -25;
-    pos n e -25;
-    pos n g -15;
-    pos n q -25;
-    pos n s -10;
-    pos n t -45;
-    pos n w -10;
-    pos n cent -25;
-    pos n ccedilla -25;
-    pos n egrave -25;
-    pos n eacute -25;
-    pos n ecircumflex -25;
-    pos n edieresis -25;
-    pos n ograve -25;
-    pos n oacute -25;
-    pos n ocircumflex -25;
-    pos n otilde -25;
-    pos n odieresis -25;
-    pos n oslash -25;
-    pos n oe -25;
-    pos n scaron -10;
-    pos n quoteright -95;
-    pos o comma -10;
-    pos o period -45;
-    pos o question -30;
-    pos o b -5;
-    pos o g -20;
-    pos o t -45;
-    pos o w -20;
-    pos o x -25;
-    pos p comma -32;
-    pos p period -32;
-    pos p a -15;
-    pos p f -15;
-    pos p g -22;
-    pos p h -20;
-    pos p i -25;
-    pos p j -25;
-    pos p k -20;
-    pos p l -20;
-    pos p m -25;
-    pos p n -25;
-    pos p p -25;
-    pos p r -25;
-    pos p t -30;
-    pos p u -5;
-    pos p z -20;
-    pos p agrave -15;
-    pos p aacute -15;
-    pos p acircumflex -15;
-    pos p atilde -15;
-    pos p adieresis -15;
-    pos p aring -15;
-    pos p ae -15;
-    pos p igrave -25;
-    pos p iacute -25;
-    pos p icircumflex -25;
-    pos p idieresis -25;
-    pos p ntilde -25;
-    pos p ugrave -5;
-    pos p uacute -5;
-    pos p ucircumflex -5;
-    pos p udieresis -5;
-    pos p zcaron -20;
-    pos p quotesinglbase -32;
-    pos p quotedblbase -32;
-    pos p ellipsis -32;
-    pos p f_f -15;
-    pos p fi -15;
-    pos p fl -15;
-    pos p f_f_i -15;
-    pos p f_f_l -15;
-    pos p f_b.liga -15;
-    pos p f_f_b.liga -15;
-    pos p f_f_h.liga -15;
-    pos p f_f_j.liga -15;
-    pos p f_f_k.liga -15;
-    pos p f_f_t.liga -15;
-    pos p f_h.liga -15;
-    pos p f_j.liga -15;
-    pos p f_k.liga -15;
-    pos p f_t.liga -15;
-    pos q b 10;
-    pos q g -5;
-    pos q t -35;
-    pos q w 20;
-    pos q quoteright -70;
-    pos r comma -140;
-    pos r period -108;
-    pos r a -20;
-    pos r c -20;
-    pos r d -35;
-    pos r e -35;
-    pos r h -25;
-    pos r k -25;
-    pos r l -25;
-    pos r o -35;
-    pos r q -35;
-    pos r w 10;
-    pos r z -15;
-    pos r cent -35;
-    pos r agrave -20;
-    pos r aacute -20;
-    pos r acircumflex -20;
-    pos r atilde -20;
-    pos r adieresis -20;
-    pos r aring -20;
-    pos r ae -20;
-    pos r ccedilla -35;
-    pos r egrave -35;
-    pos r eacute -35;
-    pos r ecircumflex -35;
-    pos r edieresis -35;
-    pos r ograve -35;
-    pos r oacute -35;
-    pos r ocircumflex -35;
-    pos r otilde -35;
-    pos r odieresis -35;
-    pos r oslash -35;
-    pos r oe -35;
-    pos r zcaron -15;
-    pos r quotesinglbase -108;
-    pos r quotedblbase -108;
-    pos r ellipsis -108;
-    pos s comma -15;
-    pos s period -20;
-    pos s g -10;
-    pos s t -35;
-    pos s w 5;
-    pos s x -20;
-    pos t comma -10;
-    pos t period -16;
-    pos t b -22;
-    pos t t -80;
-    pos t u -40;
-    pos t w -40;
-    pos t quoteright -70;
-    pos u b 10;
-    pos u g -5;
-    pos u t -35;
-    pos u w 20;
-    pos u quoteright -70;
-    pos v c -15;
-    pos v quoteright -30;
-    pos w comma -90;
-    pos w b 15;
-    pos w g -20;
-    pos w h -5;
-    pos w k -5;
-    pos w l -5;
-    pos w o -15;
-    pos w s -5;
-    pos w t -5;
-    pos w u 10;
-    pos w w 20;
-    pos w ugrave 10;
-    pos w uacute 10;
-    pos w ucircumflex 10;
-    pos w udieresis 10;
-    pos w scaron -5;
-    pos w quoteright -30;
-    pos x c -45;
-    pos x d -45;
-    pos x e -45;
-    pos x o -45;
-    pos x q -45;
-    pos x t -40;
-    pos x cent -45;
-    pos x ccedilla -45;
-    pos x egrave -45;
-    pos x eacute -45;
-    pos x ecircumflex -45;
-    pos x edieresis -45;
-    pos x ograve -45;
-    pos x oacute -45;
-    pos x ocircumflex -45;
-    pos x otilde -45;
-    pos x odieresis -45;
-    pos x oslash -45;
-    pos x oe -45;
-    pos y quoteright -30;
-    pos z comma -30;
-    pos z o -35;
-    pos z t -50;
-    pos z germandbls -25;
-    pos sterling zero -20;
-    pos sterling four -55;
-    pos sterling five -5;
-    pos sterling six -20;
-    pos sterling seven -34;
-    pos sterling eight -25;
-    pos sterling nine -30;
-    pos Agrave space -25;
-    pos Agrave J -15;
-    pos Agrave T -113;
-    pos Agrave Y -149;
-    pos Agrave g -10;
-    pos Agrave y -85;
-    pos Aacute space -25;
-    pos Aacute J -15;
-    pos Aacute T -113;
-    pos Aacute Y -149;
-    pos Aacute g -10;
-    pos Aacute y -85;
-    pos Acircumflex space -25;
-    pos Acircumflex J -15;
-    pos Acircumflex T -113;
-    pos Acircumflex Y -149;
-    pos Acircumflex g -10;
-    pos Acircumflex y -85;
-    pos Atilde space -25;
-    pos Atilde J -15;
-    pos Atilde T -113;
-    pos Atilde Y -149;
-    pos Atilde g -10;
-    pos Atilde y -85;
-    pos Adieresis space -25;
-    pos Adieresis J -15;
-    pos Adieresis T -113;
-    pos Adieresis Y -149;
-    pos Adieresis g -10;
-    pos Adieresis y -85;
-    pos Aring space -25;
-    pos Aring J -15;
-    pos Aring T -113;
-    pos Aring Y -149;
-    pos Aring g -10;
-    pos Aring y -85;
-    pos AE space -5;
-    pos AE J -13;
-    pos AE g -13;
-    pos AE y -11;
-    pos Egrave space -5;
-    pos Egrave J -13;
-    pos Egrave g -13;
-    pos Egrave y -11;
-    pos Eacute space -5;
-    pos Eacute J -13;
-    pos Eacute g -13;
-    pos Eacute y -11;
-    pos Ecircumflex space -5;
-    pos Ecircumflex J -13;
-    pos Ecircumflex g -13;
-    pos Ecircumflex y -11;
-    pos Edieresis space -5;
-    pos Edieresis J -13;
-    pos Edieresis g -13;
-    pos Edieresis y -11;
-    pos Igrave Y -45;
-    pos Igrave g -28;
-    pos Igrave t -48;
-    pos Igrave x -4;
-    pos Igrave y -5;
-    pos Igrave quoteright -4;
-    pos Iacute Y -45;
-    pos Iacute g -28;
-    pos Iacute t -48;
-    pos Iacute x -4;
-    pos Iacute y -5;
-    pos Iacute quoteright -4;
-    pos Icircumflex Y -45;
-    pos Icircumflex g -28;
-    pos Icircumflex t -48;
-    pos Icircumflex x -4;
-    pos Icircumflex y -5;
-    pos Icircumflex quoteright -4;
-    pos Idieresis Y -45;
-    pos Idieresis g -28;
-    pos Idieresis t -48;
-    pos Idieresis x -4;
-    pos Idieresis y -5;
-    pos Idieresis quoteright -4;
-    pos Eth space -20;
-    pos Eth J -20;
-    pos Eth M -30;
-    pos Eth T -33;
-    pos Eth X -69;
-    pos Eth Y -88;
-    pos Eth Z -28;
-    pos Eth b -4;
-    pos Eth g -32;
-    pos Eth t -22;
-    pos Eth x -17;
-    pos Eth y 13;
-    pos Ntilde space -13;
-    pos Ntilde S -16;
-    pos Ntilde T -3;
-    pos Ntilde quoteright 8;
-    pos Ograve space -20;
-    pos Ograve J -20;
-    pos Ograve M -30;
-    pos Ograve T -33;
-    pos Ograve X -69;
-    pos Ograve Y -88;
-    pos Ograve Z -28;
-    pos Ograve b -4;
-    pos Ograve g -32;
-    pos Ograve t -22;
-    pos Ograve x -17;
-    pos Ograve y 13;
-    pos Oacute space -20;
-    pos Oacute J -20;
-    pos Oacute M -30;
-    pos Oacute T -33;
-    pos Oacute X -69;
-    pos Oacute Y -88;
-    pos Oacute Z -28;
-    pos Oacute b -4;
-    pos Oacute g -32;
-    pos Oacute t -22;
-    pos Oacute x -17;
-    pos Oacute y 13;
-    pos Ocircumflex space -20;
-    pos Ocircumflex J -20;
-    pos Ocircumflex M -30;
-    pos Ocircumflex T -33;
-    pos Ocircumflex X -69;
-    pos Ocircumflex Y -88;
-    pos Ocircumflex Z -28;
-    pos Ocircumflex b -4;
-    pos Ocircumflex g -32;
-    pos Ocircumflex t -22;
-    pos Ocircumflex x -17;
-    pos Ocircumflex y 13;
-    pos Otilde space -20;
-    pos Otilde J -20;
-    pos Otilde M -30;
-    pos Otilde T -33;
-    pos Otilde X -69;
-    pos Otilde Y -88;
-    pos Otilde Z -28;
-    pos Otilde b -4;
-    pos Otilde g -32;
-    pos Otilde t -22;
-    pos Otilde x -17;
-    pos Otilde y 13;
-    pos Odieresis space -20;
-    pos Odieresis J -20;
-    pos Odieresis M -30;
-    pos Odieresis T -33;
-    pos Odieresis X -69;
-    pos Odieresis Y -88;
-    pos Odieresis Z -28;
-    pos Odieresis b -4;
-    pos Odieresis g -32;
-    pos Odieresis t -22;
-    pos Odieresis x -17;
-    pos Odieresis y 13;
-    pos Oslash space -20;
-    pos Oslash J -20;
-    pos Oslash M -30;
-    pos Oslash T -33;
-    pos Oslash X -69;
-    pos Oslash Y -88;
-    pos Oslash Z -28;
-    pos Oslash b -4;
-    pos Oslash g -32;
-    pos Oslash t -22;
-    pos Oslash x -17;
-    pos Oslash y 13;
-    pos Ugrave space -20;
-    pos Ugrave J -35;
-    pos Ugrave M -38;
-    pos Ugrave S -23;
-    pos Ugrave X -13;
-    pos Ugrave Z -42;
-    pos Ugrave g -72;
-    pos Ugrave t -51;
-    pos Ugrave x -43;
-    pos Uacute space -20;
-    pos Uacute J -35;
-    pos Uacute M -38;
-    pos Uacute S -23;
-    pos Uacute X -13;
-    pos Uacute Z -42;
-    pos Uacute g -72;
-    pos Uacute t -51;
-    pos Uacute x -43;
-    pos Ucircumflex space -20;
-    pos Ucircumflex J -35;
-    pos Ucircumflex M -38;
-    pos Ucircumflex S -23;
-    pos Ucircumflex X -13;
-    pos Ucircumflex Z -42;
-    pos Ucircumflex g -72;
-    pos Ucircumflex t -51;
-    pos Ucircumflex x -43;
-    pos Udieresis space -20;
-    pos Udieresis J -35;
-    pos Udieresis M -38;
-    pos Udieresis S -23;
-    pos Udieresis X -13;
-    pos Udieresis Z -42;
-    pos Udieresis g -72;
-    pos Udieresis t -51;
-    pos Udieresis x -43;
-    pos agrave y -35;
-    pos aacute y -35;
-    pos acircumflex y -35;
-    pos atilde y -35;
-    pos adieresis y -35;
-    pos aring y -35;
-    pos ae comma -10;
-    pos ae period -45;
-    pos ae question -30;
-    pos ae b -5;
-    pos ae g -20;
-    pos ae t -45;
-    pos ae w -20;
-    pos ae x -25;
-    pos ccedilla comma -20;
-    pos ccedilla b -10;
-    pos ccedilla g -20;
-    pos ccedilla x -14;
-    pos egrave comma -20;
-    pos egrave b -10;
-    pos egrave g -20;
-    pos egrave x -14;
-    pos eacute comma -20;
-    pos eacute b -10;
-    pos eacute g -20;
-    pos eacute x -14;
-    pos ecircumflex comma -20;
-    pos ecircumflex b -10;
-    pos ecircumflex g -20;
-    pos ecircumflex x -14;
-    pos edieresis comma -20;
-    pos edieresis b -10;
-    pos edieresis g -20;
-    pos edieresis x -14;
-    pos igrave b 20;
-    pos igrave o -10;
-    pos igrave t -15;
-    pos igrave quoteright -30;
-    pos iacute b 20;
-    pos iacute o -10;
-    pos iacute t -15;
-    pos iacute quoteright -30;
-    pos icircumflex b 20;
-    pos icircumflex o -10;
-    pos icircumflex t -15;
-    pos icircumflex quoteright -30;
-    pos idieresis b 20;
-    pos idieresis o -10;
-    pos idieresis t -15;
-    pos idieresis quoteright -30;
-    pos ntilde comma -15;
-    pos ntilde b 5;
-    pos ntilde c -30;
-    pos ntilde g -15;
-    pos ntilde t -45;
-    pos ntilde w -10;
-    pos ntilde quoteright -95;
-    pos ograve comma -10;
-    pos ograve period -45;
-    pos ograve question -30;
-    pos ograve b -5;
-    pos ograve g -20;
-    pos ograve t -45;
-    pos ograve w -20;
-    pos ograve x -25;
-    pos oacute comma -10;
-    pos oacute period -45;
-    pos oacute question -30;
-    pos oacute b -5;
-    pos oacute g -20;
-    pos oacute t -45;
-    pos oacute w -20;
-    pos oacute x -25;
-    pos ocircumflex comma -10;
-    pos ocircumflex period -45;
-    pos ocircumflex question -30;
-    pos ocircumflex b -5;
-    pos ocircumflex g -20;
-    pos ocircumflex t -45;
-    pos ocircumflex w -20;
-    pos ocircumflex x -25;
-    pos otilde comma -10;
-    pos otilde period -45;
-    pos otilde question -30;
-    pos otilde b -5;
-    pos otilde g -20;
-    pos otilde t -45;
-    pos otilde w -20;
-    pos otilde x -25;
-    pos odieresis comma -10;
-    pos odieresis period -45;
-    pos odieresis question -30;
-    pos odieresis b -5;
-    pos odieresis g -20;
-    pos odieresis t -45;
-    pos odieresis w -20;
-    pos odieresis x -25;
-    pos oslash comma -10;
-    pos oslash period -45;
-    pos oslash question -30;
-    pos oslash b -5;
-    pos oslash g -20;
-    pos oslash t -45;
-    pos oslash w -20;
-    pos oslash x -25;
-    pos ugrave b 10;
-    pos ugrave g -5;
-    pos ugrave t -35;
-    pos ugrave w 20;
-    pos ugrave quoteright -70;
-    pos uacute b 10;
-    pos uacute g -5;
-    pos uacute t -35;
-    pos uacute w 20;
-    pos uacute quoteright -70;
-    pos ucircumflex b 10;
-    pos ucircumflex g -5;
-    pos ucircumflex t -35;
-    pos ucircumflex w 20;
-    pos ucircumflex quoteright -70;
-    pos udieresis b 10;
-    pos udieresis g -5;
-    pos udieresis t -35;
-    pos udieresis w 20;
-    pos udieresis quoteright -70;
-    pos thorn comma -10;
-    pos thorn period -45;
-    pos thorn question -30;
-    pos thorn b -5;
-    pos thorn g -20;
-    pos thorn t -45;
-    pos thorn w -20;
-    pos thorn x -25;
-    pos dcroat b 10;
-    pos dcroat g -5;
-    pos dcroat t -35;
-    pos dcroat w 20;
-    pos dcroat quoteright -70;
-    pos OE space -5;
-    pos OE J -13;
-    pos OE g -13;
-    pos OE y -11;
-    pos oe comma -20;
-    pos oe b -10;
-    pos oe g -20;
-    pos oe x -14;
-    pos scaron comma -15;
-    pos scaron period -20;
-    pos scaron g -10;
-    pos scaron t -35;
-    pos scaron w 5;
-    pos scaron x -20;
-    pos zcaron comma -30;
-    pos zcaron o -35;
-    pos zcaron t -50;
-    pos zcaron germandbls -25;
-    pos quoteright V 13;
-    pos quoteright W 13;
-    pos quoteright c -46;
-    pos quoteright d -46;
-    pos quoteright e -46;
-    pos quoteright h -4;
-    pos quoteright i -67;
-    pos quoteright j -67;
-    pos quoteright k -4;
-    pos quoteright l -4;
-    pos quoteright m -67;
-    pos quoteright n -67;
-    pos quoteright o -46;
-    pos quoteright p -67;
-    pos quoteright q -46;
-    pos quoteright r -67;
-    pos quoteright s -102;
-    pos quoteright t -54;
-    pos quoteright w -20;
-    pos quoteright cent -46;
-    pos quoteright ccedilla -46;
-    pos quoteright egrave -46;
-    pos quoteright eacute -46;
-    pos quoteright ecircumflex -46;
-    pos quoteright edieresis -46;
-    pos quoteright igrave -67;
-    pos quoteright iacute -67;
-    pos quoteright icircumflex -67;
-    pos quoteright idieresis -67;
-    pos quoteright ntilde -67;
-    pos quoteright ograve -46;
-    pos quoteright oacute -46;
-    pos quoteright ocircumflex -46;
-    pos quoteright otilde -46;
-    pos quoteright odieresis -46;
-    pos quoteright oslash -46;
-    pos quoteright oe -46;
-    pos quoteright scaron -102;
-    pos ellipsis zero -40;
-    pos ellipsis two 10;
-    pos ellipsis six -50;
-    pos ellipsis seven -20;
-    pos ellipsis eight -20;
-    pos f_f g -5;
-    pos f_f o -10;
-    pos fi b 20;
-    pos fi o -10;
-    pos fi t -15;
-    pos fi quoteright -30;
-    pos fl b 10;
-    pos fl g -5;
-    pos fl t -35;
-    pos fl w 20;
-    pos fl quoteright -70;
-    pos f_f_i b 20;
-    pos f_f_i o -10;
-    pos f_f_i t -15;
-    pos f_f_i quoteright -30;
-    pos f_f_l b 10;
-    pos f_f_l g -5;
-    pos f_f_l t -35;
-    pos f_f_l w 20;
-    pos f_f_l quoteright -70;
-    pos f_b.liga comma -10;
-    pos f_b.liga period -45;
-    pos f_b.liga question -30;
-    pos f_b.liga b -5;
-    pos f_b.liga g -20;
-    pos f_b.liga t -45;
-    pos f_b.liga w -20;
-    pos f_b.liga x -25;
-    pos f_f_b.liga comma -10;
-    pos f_f_b.liga period -45;
-    pos f_f_b.liga question -30;
-    pos f_f_b.liga b -5;
-    pos f_f_b.liga g -20;
-    pos f_f_b.liga t -45;
-    pos f_f_b.liga w -20;
-    pos f_f_b.liga x -25;
-    pos f_f_h.liga comma -15;
-    pos f_f_h.liga b 5;
-    pos f_f_h.liga c -30;
-    pos f_f_h.liga g -15;
-    pos f_f_h.liga t -45;
-    pos f_f_h.liga w -10;
-    pos f_f_h.liga quoteright -95;
-    pos f_f_j.liga o -20;
-    pos f_f_k.liga u -30;
-    pos f_f_k.liga w -20;
-    pos f_f_t.liga comma -10;
-    pos f_f_t.liga period -16;
-    pos f_f_t.liga b -22;
-    pos f_f_t.liga t -80;
-    pos f_f_t.liga u -40;
-    pos f_f_t.liga w -40;
-    pos f_f_t.liga quoteright -70;
-    pos f_h.liga comma -15;
-    pos f_h.liga b 5;
-    pos f_h.liga c -30;
-    pos f_h.liga g -15;
-    pos f_h.liga t -45;
-    pos f_h.liga w -10;
-    pos f_h.liga quoteright -95;
-    pos f_j.liga o -20;
-    pos f_k.liga u -30;
-    pos f_k.liga w -20;
-    pos f_t.liga comma -10;
-    pos f_t.liga period -16;
-    pos f_t.liga b -22;
-    pos f_t.liga t -80;
-    pos f_t.liga u -40;
-    pos f_t.liga w -40;
-    pos f_t.liga quoteright -70;
+lookup locl_latn_1 {
+	script latn;
+	language ROM;
+	sub Scedilla by Scommaaccent;
+	sub scedilla by scommaaccent;
+	language MOL;
+	sub Scedilla by Scommaaccent;
+	sub scedilla by scommaaccent;
+} locl_latn_1;
 
-    subtable;
-
-    pos @_V @_s -112;
-    pos @_V @_N -10;
-    pos @_V @_v2 -14;
-    pos @_N @_N -23;
-    pos @_z @_s -20;
-    pos @_z @_z -46;
-    pos @_V @_h2 -23;
-    pos @_t @_z -10;
-    pos @_z @_h2 -27;
-    pos @_t @_s -13;
-    pos @_s @_h2 -20;
-    pos @_t @_h2 -25;
-    pos @_V @_U -20;
-    pos @_V @_u -56;
-    pos @_N @_u -33;
-    pos @_U @_N -30;
-    pos @_U @_V -30;
-    pos @_U @_z -69;
-    pos @_U @_s -46;
-    pos @_V @_H -12;
-    pos @_H @_V -7;
-    pos @_v @_comma -87;
-    pos @_U @_h2 -31;
-    pos @_H @_v2 -10;
-    pos @_H @_N -16;
-    pos @_H @_s -19;
-    pos @_a @_v2 -38;
-    pos @_A @_v2 -87;
-    pos @_H @_h2 -8;
-    pos @_A @_V -159;
-    pos @_E @_N -8;
-    pos @_E @_v2 -12;
-    pos @_E @_z -12;
-    pos @_A @_N -18;
-    pos @_N @_A2 -8;
-    pos @_V @_A2 -163;
-    pos @_z @_a2 -35;
-    pos @_N @_a2 -36;
-    pos @_E @_h2 -7;
-    pos @_c @_s -15;
-    pos @_U @_U -32;
-    pos @_c @_z -30;
-    pos @_A @_h2 -13;
-    pos @_V @_a2 -132;
-    pos @_t @_a2 -25;
-    pos @_k @_a2 -5;
-    pos @_c @_h2 -35;
-    pos @_H @_u -23;
-    pos @_U @_H -23;
-    pos @_h @_u -25;
-    pos @_H @_U -19;
-    pos @_v @_a2 -30;
-    pos @_A @_u -34;
-    pos @_D @_N -32;
-    pos @_D @_s -13;
-    pos @_D @_v2 13;
-    pos @_A @_U -70;
-    pos @_E @_U -5;
-    pos @_H @_H -12;
-    pos @_E @_u -13;
-    pos @_E @_comma -8;
-    pos @_D @_z -39;
-    pos @_D @_V -58;
-    pos @_N @_i2 -17;
-    pos @_N @_C -33;
-    pos @_s @_i2 -15;
-    pos @_U @_A2 -82;
-    pos @_U @_a2 -68;
-    pos @_z @_i2 -24;
-    pos @_c @_u -8;
-    pos @_V @_i2 -26;
-    pos @_D @_h2 -37;
-    pos @_V @_C -69;
-    pos @_H @_A2 -12;
-    pos @_k @_i2 -10;
-    pos @_H @_a2 -29;
-    pos @_b @_s -15;
-    pos @_b @_z -35;
-    pos @_h @_a2 -15;
-    pos @_t @_i2 -30;
-    pos @_b @_v2 -30;
-    pos @_d @_h2 5;
-    pos @_A @_a2 -11;
-    pos @_D @_comma -73;
-    pos @_D @_u -23;
-    pos @_D @_U -24;
-    pos @_b @_h2 -25;
-    pos @_N @_B -24;
-    pos @_V @_B -24;
-    pos @_U @_i2 -23;
-    pos @_U @_C -41;
-    pos @_c @_a2 -25;
-    pos @_D @_H -13;
-    pos @_d @_u -3;
-    pos @_H @_i2 -13;
-    pos @_H @_C -23;
-    pos @_h @_i2 -5;
-    pos @_b @_u -25;
-    pos @_D @_a2 -27;
-    pos @_E @_i2 -7;
-    pos @_E @_C -20;
-    pos @_A @_i2 -9;
-    pos @_A @_C -73;
-    pos @_D @_A2 -60;
-    pos @_U @_B -34;
-    pos @_c @_i2 -25;
-    pos @_d @_a2 -10;
-    pos @_z @_c2 -42;
-    pos @_V @_c2 -146;
-    pos @_N @_c2 -48;
-    pos @_H @_B -12;
-    pos @_b @_a2 -20;
-    pos @_s @_c2 -10;
-    pos @_A @_B -7;
-    pos @_D @_i2 -19;
-    pos @_U @_f -34;
-    pos @_v @_c2 -35;
-    pos @_k @_c2 -40;
-    pos @_t @_c2 -55;
-    pos @_H @_f -18;
-    pos @_U @_c2 -53;
-    pos @_b @_i2 -25;
-    pos @_h @_c2 -15;
-    pos @_D @_B -23;
-    pos @_c @_f -20;
-    pos @_H @_c2 -36;
-    pos @_i @_c2 -15;
-    pos @_A @_c2 -33;
-    pos @_E @_c2 -7;
-    pos @_a @_c2 -25;
-    pos @_D @_f -11;
-    pos @_c @_c2 -25;
-    pos @_d @_f 10;
-    pos @_b @_f -10;
-    pos @_D @_c2 -13;
-    pos @_d @_c2 -15;
-    pos @_b @_c2 -15;
-  } kern;";
-tag = kern;
+lookup locl_latn_2 {
+	script latn;
+	language CAT;
+	sub l periodcentered' l by periodcentered.loclCAT;
+	sub L periodcentered' L by periodcentered.loclCAT.case;
+} locl_latn_2;
+";
+tag = locl;
+},
+{
+automatic = 1;
+code = "sub one by oneinferior;
+sub two by twoinferior;
+sub three by threeinferior;
+sub four by fourinferior;
+sub five by fiveinferior;
+sub six by sixinferior;
+sub seven by seveninferior;
+sub eight by eightinferior;
+sub nine by nineinferior;
+";
+tag = subs;
+},
+{
+automatic = 1;
+code = "sub one by oneinferior;
+sub two by twoinferior;
+sub three by threeinferior;
+sub four by fourinferior;
+sub five by fiveinferior;
+sub six by sixinferior;
+sub seven by seveninferior;
+sub eight by eightinferior;
+sub nine by nineinferior;
+";
+tag = sinf;
+},
+{
+automatic = 1;
+code = "sub zero by zero.numr;
+sub one by one.numr;
+sub two by two.numr;
+sub three by three.numr;
+sub four by four.numr;
+sub five by five.numr;
+sub six by six.numr;
+sub seven by seven.numr;
+sub eight by eight.numr;
+sub nine by nine.numr;
+";
+tag = numr;
+},
+{
+automatic = 1;
+code = "sub zero by zero.dnom;
+sub one by one.dnom;
+sub two by two.dnom;
+sub three by three.dnom;
+sub four by four.dnom;
+sub five by five.dnom;
+sub six by six.dnom;
+sub seven by seven.dnom;
+sub eight by eight.dnom;
+sub nine by nine.dnom;
+";
+tag = dnom;
+},
+{
+automatic = 1;
+code = "sub zero.tf by zero;
+sub one.tf by one;
+sub two.tf by two;
+sub three.tf by three;
+sub four.tf by four;
+sub five.tf by five;
+sub six.tf by six;
+sub seven.tf by seven;
+sub eight.tf by eight;
+sub nine.tf by nine;
+";
+tag = pnum;
+},
+{
+automatic = 1;
+code = "sub zero by zero.tf;
+sub one by one.tf;
+sub two by two.tf;
+sub three by three.tf;
+sub four by four.tf;
+sub five by five.tf;
+sub six by six.tf;
+sub seven by seven.tf;
+sub eight by eight.tf;
+sub nine by nine.tf;
+";
+tag = tnum;
+},
+{
+automatic = 1;
+code = "sub periodcentered.loclCAT by periodcentered.loclCAT.case;
+sub dieresiscomb by dieresiscomb.case;
+sub dotaccentcomb by dotaccentcomb.case;
+sub gravecomb by gravecomb.case;
+sub acutecomb by acutecomb.case;
+sub hungarumlautcomb by hungarumlautcomb.case;
+sub caroncomb.alt by caroncomb.alt.case;
+sub circumflexcomb by circumflexcomb.case;
+sub caroncomb by caroncomb.case;
+sub brevecomb by brevecomb.case;
+sub ringcomb by ringcomb.case;
+sub tildecomb by tildecomb.case;
+sub macroncomb by macroncomb.case;
+sub commaturnedabovecomb by commaturnedabovecomb.case;
+sub commaaccentcomb by commaaccentcomb.case;
+sub cedillacomb by cedillacomb.case;
+sub ogonekcomb by ogonekcomb.case;
+";
+tag = case;
+},
+{
+automatic = 1;
+code = "sub zero by zero.zero;
+";
+tag = zero;
 }
 );
 fontMaster = (
@@ -10174,7 +7983,7 @@ unicode = 81;
 {
 glyphname = R;
 kernLeft = B;
-lastChange = "2023-01-05 10:52:45 +0000";
+lastChange = "2023-01-05 10:54:23 +0000";
 layers = (
 {
 anchors = (
@@ -10184,7 +7993,7 @@ pos = (335,0);
 },
 {
 name = top;
-pos = (335,750);
+pos = (267,750);
 }
 );
 background = {
@@ -10274,16 +8083,16 @@ nodes = (
 (234,364,l),
 (244,364,ls),
 (282,364,o),
-(296,347,o),
+(295,346,o),
 (331,280,cs),
 (429,100,ls),
-(445,69,o),
+(446,69,o),
 (468,31,o),
 (487,0,c),
 (694,0,l),
 (694,10,l),
 (662,10,o),
-(636,29,o),
+(635,29,o),
 (617,60,cs),
 (491,276,ls),
 (462,325,o),
@@ -10330,7 +8139,7 @@ unicode = 82;
 {
 glyphname = Racute;
 kernLeft = J;
-lastChange = "2023-01-05 10:26:50 +0000";
+lastChange = "2023-01-05 10:54:23 +0000";
 layers = (
 {
 background = {
@@ -10423,7 +8232,7 @@ shapes = (
 ref = R;
 },
 {
-pos = (263,242);
+pos = (195,242);
 ref = acutecomb.case;
 }
 );
@@ -10435,7 +8244,7 @@ unicode = 340;
 {
 glyphname = Rcaron;
 kernLeft = J;
-lastChange = "2023-01-05 10:21:30 +0000";
+lastChange = "2023-01-05 10:54:23 +0000";
 layers = (
 {
 background = {
@@ -10529,7 +8338,7 @@ shapes = (
 ref = R;
 },
 {
-pos = (160,242);
+pos = (92,242);
 ref = caroncomb.case;
 }
 );
@@ -11642,7 +9451,7 @@ unicode = 538;
 glyphname = U;
 kernLeft = U2;
 kernRight = U;
-lastChange = "2023-01-05 10:52:45 +0000";
+lastChange = "2023-01-05 10:55:33 +0000";
 layers = (
 {
 anchors = (
@@ -11652,11 +9461,11 @@ pos = (373,0);
 },
 {
 name = ogonek;
-pos = (671,10);
+pos = (418,10);
 },
 {
 name = top;
-pos = (373,750);
+pos = (403,750);
 },
 {
 name = topright;
@@ -11769,7 +9578,7 @@ unicode = 85;
 glyphname = Uacute;
 kernLeft = U2;
 kernRight = U;
-lastChange = "2023-01-05 10:26:50 +0000";
+lastChange = "2023-01-05 10:55:21 +0000";
 layers = (
 {
 background = {
@@ -11842,7 +9651,7 @@ shapes = (
 ref = U;
 },
 {
-pos = (301,242);
+pos = (331,242);
 ref = acutecomb.case;
 }
 );
@@ -11854,7 +9663,7 @@ unicode = 218;
 {
 glyphname = Ubreve;
 kernLeft = J;
-lastChange = "2023-01-05 10:21:30 +0000";
+lastChange = "2023-01-05 10:55:21 +0000";
 layers = (
 {
 background = {
@@ -11939,7 +9748,7 @@ shapes = (
 ref = U;
 },
 {
-pos = (219,242);
+pos = (249,242);
 ref = brevecomb.case;
 }
 );
@@ -11952,7 +9761,7 @@ unicode = 364;
 glyphname = Ucircumflex;
 kernLeft = U2;
 kernRight = U;
-lastChange = "2023-01-05 10:21:30 +0000";
+lastChange = "2023-01-05 10:55:21 +0000";
 layers = (
 {
 background = {
@@ -12026,7 +9835,7 @@ shapes = (
 ref = U;
 },
 {
-pos = (198,242);
+pos = (228,242);
 ref = circumflexcomb.case;
 }
 );
@@ -12039,7 +9848,7 @@ unicode = 219;
 glyphname = Udieresis;
 kernLeft = U2;
 kernRight = U;
-lastChange = "2023-01-05 10:21:30 +0000";
+lastChange = "2023-01-05 10:55:21 +0000";
 layers = (
 {
 background = {
@@ -12135,7 +9944,7 @@ shapes = (
 ref = U;
 },
 {
-pos = (167,242);
+pos = (197,242);
 ref = dieresiscomb.case;
 }
 );
@@ -12148,7 +9957,7 @@ unicode = 220;
 glyphname = Ugrave;
 kernLeft = U2;
 kernRight = U;
-lastChange = "2023-01-05 10:38:02 +0000";
+lastChange = "2023-01-05 10:55:21 +0000";
 layers = (
 {
 background = {
@@ -12221,7 +10030,7 @@ shapes = (
 ref = U;
 },
 {
-pos = (196,242);
+pos = (226,242);
 ref = gravecomb.case;
 }
 );
@@ -12233,7 +10042,7 @@ unicode = 217;
 {
 glyphname = Uhungarumlaut;
 kernLeft = J;
-lastChange = "2023-01-05 10:52:37 +0000";
+lastChange = "2023-01-05 10:55:21 +0000";
 layers = (
 {
 background = {
@@ -12317,7 +10126,7 @@ shapes = (
 ref = U;
 },
 {
-pos = (225,242);
+pos = (255,242);
 ref = hungarumlautcomb.case;
 }
 );
@@ -12329,7 +10138,7 @@ unicode = 368;
 {
 glyphname = Umacron;
 kernLeft = J;
-lastChange = "2023-01-05 10:21:30 +0000";
+lastChange = "2023-01-05 10:55:21 +0000";
 layers = (
 {
 background = {
@@ -12400,7 +10209,7 @@ shapes = (
 ref = U;
 },
 {
-pos = (231,242);
+pos = (261,242);
 ref = macroncomb.case;
 }
 );
@@ -12412,7 +10221,7 @@ unicode = 362;
 {
 glyphname = Uogonek;
 kernLeft = J;
-lastChange = "2023-01-05 10:38:02 +0000";
+lastChange = "2023-01-05 10:55:33 +0000";
 layers = (
 {
 background = {
@@ -12494,7 +10303,7 @@ shapes = (
 ref = U;
 },
 {
-pos = (523,10);
+pos = (270,10);
 ref = ogonekcomb.case;
 }
 );
@@ -12506,7 +10315,7 @@ unicode = 370;
 {
 glyphname = Uring;
 kernLeft = J;
-lastChange = "2023-01-05 10:21:30 +0000";
+lastChange = "2023-01-05 10:55:21 +0000";
 layers = (
 {
 background = {
@@ -12602,7 +10411,7 @@ shapes = (
 ref = U;
 },
 {
-pos = (263,242);
+pos = (293,242);
 ref = ringcomb.case;
 }
 );
@@ -12705,7 +10514,7 @@ unicode = 86;
 glyphname = W;
 kernLeft = V2;
 kernRight = V;
-lastChange = "2023-01-05 10:52:45 +0000";
+lastChange = "2023-01-05 10:56:18 +0000";
 layers = (
 {
 anchors = (
@@ -12715,7 +10524,7 @@ pos = (502,0);
 },
 {
 name = top;
-pos = (502,750);
+pos = (522,750);
 }
 );
 background = {
@@ -12778,7 +10587,7 @@ nodes = (
 (676,-15,l),
 (684,-15,l),
 (939,648,ls),
-(960,701,o),
+(959,701,o),
 (992,740,o),
 (1028,740,c),
 (1028,750,l),
@@ -12789,7 +10598,7 @@ nodes = (
 (920,636,cs),
 (749,186,l),
 (596,637,ls),
-(573,702,o),
+(574,702,o),
 (592,740,o),
 (649,740,cs),
 (653,740,l),
@@ -12798,7 +10607,7 @@ nodes = (
 (332,740,l),
 (334,740,ls),
 (387,740,o),
-(421,703,o),
+(420,703,o),
 (446,631,cs),
 (512,446,l),
 (407,186,l),
@@ -12826,7 +10635,7 @@ unicode = 87;
 {
 glyphname = Wacute;
 kernLeft = J;
-lastChange = "2023-01-05 10:26:50 +0000";
+lastChange = "2023-01-05 10:56:18 +0000";
 layers = (
 {
 background = {
@@ -12896,7 +10705,7 @@ shapes = (
 ref = W;
 },
 {
-pos = (430,242);
+pos = (450,242);
 ref = acutecomb.case;
 }
 );
@@ -12908,7 +10717,7 @@ unicode = 7810;
 {
 glyphname = Wcircumflex;
 kernLeft = J;
-lastChange = "2023-01-05 10:21:30 +0000";
+lastChange = "2023-01-05 10:56:18 +0000";
 layers = (
 {
 background = {
@@ -12979,7 +10788,7 @@ shapes = (
 ref = W;
 },
 {
-pos = (327,242);
+pos = (347,242);
 ref = circumflexcomb.case;
 }
 );
@@ -12991,7 +10800,7 @@ unicode = 372;
 {
 glyphname = Wdieresis;
 kernLeft = J;
-lastChange = "2023-01-05 10:21:30 +0000";
+lastChange = "2023-01-05 10:56:18 +0000";
 layers = (
 {
 background = {
@@ -13084,7 +10893,7 @@ shapes = (
 ref = W;
 },
 {
-pos = (296,242);
+pos = (316,242);
 ref = dieresiscomb.case;
 }
 );
@@ -13096,7 +10905,7 @@ unicode = 7812;
 {
 glyphname = Wgrave;
 kernLeft = J;
-lastChange = "2023-01-05 10:38:02 +0000";
+lastChange = "2023-01-05 10:56:18 +0000";
 layers = (
 {
 background = {
@@ -13166,7 +10975,7 @@ shapes = (
 ref = W;
 },
 {
-pos = (325,242);
+pos = (345,242);
 ref = gravecomb.case;
 }
 );
@@ -13352,7 +11161,7 @@ unicode = 88;
 {
 glyphname = Y;
 kernLeft = J;
-lastChange = "2023-01-05 10:52:45 +0000";
+lastChange = "2023-01-05 10:56:38 +0000";
 layers = (
 {
 anchors = (
@@ -13362,7 +11171,7 @@ pos = (320,0);
 },
 {
 name = top;
-pos = (320,750);
+pos = (350,750);
 },
 {
 name = topleft;
@@ -13438,7 +11247,7 @@ nodes = (
 (514,621,cs),
 (393,458,l),
 (263,634,ls),
-(220,691,o),
+(221,691,o),
 (239,740,o),
 (312,740,c),
 (312,750,l),
@@ -13466,7 +11275,7 @@ unicode = 89;
 {
 glyphname = Yacute;
 kernLeft = J;
-lastChange = "2023-01-05 10:26:50 +0000";
+lastChange = "2023-01-05 10:56:38 +0000";
 layers = (
 {
 background = {
@@ -13531,7 +11340,7 @@ shapes = (
 ref = Y;
 },
 {
-pos = (248,242);
+pos = (278,242);
 ref = acutecomb.case;
 }
 );
@@ -13543,7 +11352,7 @@ unicode = 221;
 {
 glyphname = Ycircumflex;
 kernLeft = J;
-lastChange = "2023-01-05 10:21:30 +0000";
+lastChange = "2023-01-05 10:56:38 +0000";
 layers = (
 {
 background = {
@@ -13609,7 +11418,7 @@ shapes = (
 ref = Y;
 },
 {
-pos = (145,242);
+pos = (175,242);
 ref = circumflexcomb.case;
 }
 );
@@ -13621,7 +11430,7 @@ unicode = 374;
 {
 glyphname = Ydieresis;
 kernLeft = J;
-lastChange = "2023-01-05 10:21:30 +0000";
+lastChange = "2023-01-05 10:56:38 +0000";
 layers = (
 {
 background = {
@@ -13709,7 +11518,7 @@ shapes = (
 ref = Y;
 },
 {
-pos = (114,242);
+pos = (144,242);
 ref = dieresiscomb.case;
 }
 );
@@ -13721,7 +11530,7 @@ unicode = 376;
 {
 glyphname = Ygrave;
 kernLeft = J;
-lastChange = "2023-01-05 10:38:02 +0000";
+lastChange = "2023-01-05 10:56:38 +0000";
 layers = (
 {
 background = {
@@ -13786,7 +11595,7 @@ shapes = (
 ref = Y;
 },
 {
-pos = (143,242);
+pos = (173,242);
 ref = gravecomb.case;
 }
 );
@@ -13798,7 +11607,7 @@ unicode = 7922;
 {
 glyphname = Z;
 kernLeft = J;
-lastChange = "2023-01-05 10:52:45 +0000";
+lastChange = "2023-01-05 10:56:55 +0000";
 layers = (
 {
 anchors = (
@@ -13812,7 +11621,7 @@ pos = (285,375);
 },
 {
 name = top;
-pos = (285,750);
+pos = (305,750);
 }
 );
 background = {
@@ -13876,7 +11685,7 @@ unicode = 90;
 {
 glyphname = Zacute;
 kernLeft = J;
-lastChange = "2023-01-05 10:26:50 +0000";
+lastChange = "2023-01-05 10:56:55 +0000";
 layers = (
 {
 background = {
@@ -13923,7 +11732,7 @@ shapes = (
 ref = Z;
 },
 {
-pos = (213,242);
+pos = (233,242);
 ref = acutecomb.case;
 }
 );
@@ -13935,7 +11744,7 @@ unicode = 377;
 {
 glyphname = Zcaron;
 kernLeft = J;
-lastChange = "2023-01-05 10:21:30 +0000";
+lastChange = "2023-01-05 10:56:55 +0000";
 layers = (
 {
 background = {
@@ -13983,7 +11792,7 @@ shapes = (
 ref = Z;
 },
 {
-pos = (110,242);
+pos = (130,242);
 ref = caroncomb.case;
 }
 );
@@ -13995,7 +11804,7 @@ unicode = 381;
 {
 glyphname = Zdotaccent;
 kernLeft = J;
-lastChange = "2023-01-05 10:21:30 +0000";
+lastChange = "2023-01-05 10:56:55 +0000";
 layers = (
 {
 background = {
@@ -14050,7 +11859,7 @@ shapes = (
 ref = Z;
 },
 {
-pos = (180,242);
+pos = (200,242);
 ref = dotaccentcomb.case;
 }
 );
@@ -14063,7 +11872,7 @@ unicode = 379;
 glyphname = a;
 kernLeft = a2;
 kernRight = a;
-lastChange = "2023-01-05 10:52:45 +0000";
+lastChange = "2023-01-05 10:56:00 +0000";
 layers = (
 {
 anchors = (
@@ -14073,7 +11882,7 @@ pos = (276,0);
 },
 {
 name = ogonek;
-pos = (496,10);
+pos = (441,10);
 },
 {
 name = top;
@@ -14992,7 +12801,7 @@ unicode = 257;
 {
 glyphname = aogonek;
 kernLeft = J;
-lastChange = "2023-01-05 10:38:31 +0000";
+lastChange = "2023-01-05 10:56:00 +0000";
 layers = (
 {
 background = {
@@ -15093,7 +12902,7 @@ shapes = (
 ref = a;
 },
 {
-pos = (352,1);
+pos = (297,1);
 ref = ogonekcomb;
 }
 );
@@ -15556,7 +13365,7 @@ unicode = 230;
 glyphname = b;
 kernLeft = J;
 kernRight = b;
-lastChange = "2023-01-05 10:52:45 +0000";
+lastChange = "2023-01-05 10:58:39 +0000";
 layers = (
 {
 anchors = (
@@ -16131,7 +13940,7 @@ unicode = 267;
 glyphname = d;
 kernLeft = c2;
 kernRight = d;
-lastChange = "2023-01-05 10:52:45 +0000";
+lastChange = "2023-01-05 10:57:30 +0000";
 layers = (
 {
 anchors = (
@@ -16149,7 +13958,7 @@ pos = (303,780);
 },
 {
 name = topright;
-pos = (585,780);
+pos = (576,830);
 }
 );
 background = {
@@ -16445,7 +14254,8 @@ unicode = 240;
 {
 glyphname = dcaron;
 kernLeft = J;
-lastChange = "2023-01-05 10:38:02 +0000";
+kernRight = lcaron;
+lastChange = "2023-01-05 10:57:36 +0000";
 layers = (
 {
 background = {
@@ -16550,7 +14360,7 @@ shapes = (
 ref = d;
 },
 {
-pos = (524,0);
+pos = (515,50);
 ref = caroncomb.alt;
 }
 );
@@ -16928,8 +14738,9 @@ unicode = 233;
 },
 {
 glyphname = ecaron;
-kernLeft = J;
-lastChange = "2023-01-05 10:31:53 +0000";
+kernLeft = c2;
+kernRight = c;
+lastChange = "2023-01-05 10:59:20 +0000";
 layers = (
 {
 background = {
@@ -17212,8 +15023,9 @@ unicode = 235;
 },
 {
 glyphname = edotaccent;
-kernLeft = J;
-lastChange = "2023-01-05 10:31:53 +0000";
+kernLeft = c2;
+kernRight = c;
+lastChange = "2023-01-05 10:59:38 +0000";
 layers = (
 {
 background = {
@@ -17393,8 +15205,9 @@ unicode = 232;
 },
 {
 glyphname = emacron;
-kernLeft = J;
-lastChange = "2023-01-05 10:31:53 +0000";
+kernLeft = c2;
+kernRight = c;
+lastChange = "2023-01-05 10:59:50 +0000";
 layers = (
 {
 background = {
@@ -17478,8 +15291,9 @@ unicode = 275;
 },
 {
 glyphname = eogonek;
-kernLeft = J;
-lastChange = "2023-01-05 10:38:43 +0000";
+kernLeft = c2;
+kernRight = c;
+lastChange = "2023-01-05 10:59:58 +0000";
 layers = (
 {
 background = {
@@ -18058,7 +15872,7 @@ unicode = 287;
 {
 glyphname = gcommaaccent;
 kernLeft = J;
-lastChange = "2023-01-05 10:52:45 +0000";
+lastChange = "2023-01-05 11:10:12 +0000";
 layers = (
 {
 background = {
@@ -18188,132 +16002,11 @@ nodes = (
 layerId = "9BCDAEAC-6304-481D-8AE6-B16EBB77438F";
 shapes = (
 {
-closed = 1;
-nodes = (
-(431,-224,o),
-(535,-165,o),
-(535,-62,cs),
-(535,30,o),
-(448,86,o),
-(295,91,cs),
-(260,93,ls),
-(210,94,o),
-(176,98,o),
-(157,104,cs),
-(138,109,o),
-(129,118,o),
-(129,131,cs),
-(129,146,o),
-(140,160,o),
-(161,171,c),
-(189,160,o),
-(221,155,o),
-(256,155,cs),
-(386,155,o),
-(467,228,o),
-(467,339,cs),
-(467,407,o),
-(437,459,o),
-(384,490,c),
-(520,490,l),
-(530,508,l),
-(346,508,l),
-(318,517,o),
-(288,522,o),
-(256,522,cs),
-(127,522,o),
-(44,449,o),
-(44,339,cs),
-(44,263,o),
-(82,205,o),
-(149,176,c),
-(86,153,o),
-(50,113,o),
-(50,69,cs),
-(50,28,o),
-(81,0,o),
-(144,-16,c),
-(67,-36,o),
-(19,-74,o),
-(19,-121,cs),
-(19,-182,o),
-(114,-224,o),
-(256,-224,cs)
-);
+ref = g;
 },
 {
-closed = 1;
-nodes = (
-(171,-211,o),
-(117,-166,o),
-(117,-97,cs),
-(117,-58,o),
-(130,-28,o),
-(158,-19,c),
-(183,-24,o),
-(216,-28,o),
-(255,-29,cs),
-(290,-31,ls),
-(341,-32,o),
-(379,-39,o),
-(403,-51,cs),
-(426,-64,o),
-(438,-82,o),
-(438,-105,cs),
-(438,-167,o),
-(359,-211,o),
-(267,-211,cs)
-);
-},
-{
-closed = 1;
-nodes = (
-(234,167,o),
-(218,182,o),
-(206,213,cs),
-(194,244,o),
-(188,286,o),
-(188,339,cs),
-(188,392,o),
-(194,433,o),
-(206,464,cs),
-(218,494,o),
-(235,509,o),
-(256,509,cs),
-(277,509,o),
-(293,494,o),
-(306,464,cs),
-(318,433,o),
-(324,392,o),
-(324,339,cs),
-(324,286,o),
-(318,245,o),
-(306,214,cs),
-(293,183,o),
-(276,167,o),
-(255,167,cs)
-);
-},
-{
-closed = 1;
-nodes = (
-(308,615,o),
-(340,644,o),
-(340,691,cs),
-(340,771,o),
-(242,743,o),
-(242,801,cs),
-(242,845,o),
-(278,869,o),
-(322,922,c),
-(313,926,l),
-(242,849,o),
-(180,802,o),
-(180,706,cs),
-(180,650,o),
-(212,615,o),
-(261,615,cs)
-);
+pos = (150,0);
+ref = commaturnedabovecomb;
 }
 );
 width = 540;
@@ -19503,7 +17196,7 @@ unicode = 303;
 {
 glyphname = j;
 kernLeft = i2;
-lastChange = "2023-01-05 10:52:45 +0000";
+lastChange = "2023-01-05 10:58:26 +0000";
 layers = (
 {
 background = {
@@ -19690,13 +17383,13 @@ unicode = 567;
 glyphname = k;
 kernLeft = h2;
 kernRight = k;
-lastChange = "2023-01-05 10:52:45 +0000";
+lastChange = "2023-01-05 11:09:04 +0000";
 layers = (
 {
 anchors = (
 {
 name = bottom;
-pos = (301,0);
+pos = (289,0);
 },
 {
 name = top;
@@ -19799,7 +17492,7 @@ nodes = (
 (564,56,c),
 (365,362,l),
 (434,420,ls),
-(497,474,o),
+(498,473,o),
 (525,490,o),
 (557,496,cs),
 (567,498,l),
@@ -19844,7 +17537,7 @@ unicode = 107;
 {
 glyphname = kcommaaccent;
 kernLeft = J;
-lastChange = "2023-01-05 10:52:45 +0000";
+lastChange = "2023-01-05 11:09:04 +0000";
 layers = (
 {
 background = {
@@ -19939,93 +17632,11 @@ nodes = (
 layerId = "9BCDAEAC-6304-481D-8AE6-B16EBB77438F";
 shapes = (
 {
-closed = 1;
-nodes = (
-(306,0,l),
-(306,10,l),
-(305,10,ls),
-(257,10,o),
-(225,42,o),
-(225,90,cs),
-(225,243,l),
-(262,275,l),
-(376,92,ls),
-(387,74,o),
-(394,60,o),
-(399,50,cs),
-(404,40,o),
-(406,32,o),
-(406,27,cs),
-(406,20,o),
-(403,16,o),
-(397,14,cs),
-(391,11,o),
-(380,10,o),
-(364,10,c),
-(364,0,l),
-(628,0,l),
-(628,10,l),
-(605,10,o),
-(589,23,o),
-(564,56,c),
-(365,362,l),
-(434,420,ls),
-(497,474,o),
-(525,490,o),
-(557,496,cs),
-(567,498,l),
-(567,508,l),
-(418,508,l),
-(418,498,l),
-(431,495,ls),
-(444,492,o),
-(448,483,o),
-(444,466,cs),
-(439,449,o),
-(423,428,o),
-(395,405,cs),
-(225,262,l),
-(225,788,l),
-(215,788,l),
-(208,777,o),
-(196,768,o),
-(180,761,cs),
-(163,754,o),
-(137,750,o),
-(102,750,cs),
-(0,750,l),
-(0,740,l),
-(48,740,o),
-(81,708,o),
-(81,660,cs),
-(81,90,ls),
-(81,42,o),
-(49,10,o),
-(1,10,cs),
-(0,10,l),
-(0,0,l)
-);
+ref = k;
 },
 {
-closed = 1;
-nodes = (
-(306,-286,o),
-(368,-239,o),
-(368,-143,cs),
-(368,-87,o),
-(336,-52,o),
-(287,-52,cs),
-(240,-52,o),
-(208,-81,o),
-(208,-128,cs),
-(208,-208,o),
-(306,-180,o),
-(306,-238,cs),
-(306,-282,o),
-(270,-306,o),
-(226,-359,c),
-(235,-363,l)
-);
+pos = (182,0);
+ref = commaaccentcomb;
 }
 );
 width = 601;
@@ -20037,13 +17648,13 @@ unicode = 311;
 glyphname = l;
 kernLeft = h2;
 kernRight = d;
-lastChange = "2023-01-05 10:52:45 +0000";
+lastChange = "2023-01-05 11:09:44 +0000";
 layers = (
 {
 anchors = (
 {
 name = bottom;
-pos = (145,0);
+pos = (155,0);
 },
 {
 name = center;
@@ -20265,7 +17876,7 @@ unicode = 318;
 {
 glyphname = lcommaaccent;
 kernLeft = J;
-lastChange = "2023-01-05 10:52:45 +0000";
+lastChange = "2023-01-05 11:09:44 +0000";
 layers = (
 {
 background = {
@@ -20327,53 +17938,11 @@ nodes = (
 layerId = "9BCDAEAC-6304-481D-8AE6-B16EBB77438F";
 shapes = (
 {
-closed = 1;
-nodes = (
-(306,0,l),
-(306,10,l),
-(258,10,o),
-(225,41,o),
-(225,90,cs),
-(225,788,l),
-(215,788,l),
-(208,777,o),
-(196,768,o),
-(180,761,cs),
-(163,754,o),
-(137,750,o),
-(102,750,cs),
-(0,750,l),
-(0,740,l),
-(48,740,o),
-(81,708,o),
-(81,660,cs),
-(81,90,ls),
-(81,41,o),
-(48,10,o),
-(0,10,c),
-(0,0,l)
-);
+ref = l;
 },
 {
-closed = 1;
-nodes = (
-(186,-286,o),
-(248,-239,o),
-(248,-143,cs),
-(248,-87,o),
-(216,-52,o),
-(167,-52,cs),
-(120,-52,o),
-(88,-81,o),
-(88,-128,cs),
-(88,-208,o),
-(186,-180,o),
-(186,-238,cs),
-(186,-282,o),
-(150,-306,o),
-(106,-359,c),
-(115,-363,l)
-);
+pos = (48,0);
+ref = commaaccentcomb;
 }
 );
 width = 289;
@@ -20998,7 +18567,7 @@ unicode = 328;
 {
 glyphname = ncommaaccent;
 kernLeft = J;
-lastChange = "2023-01-05 10:52:45 +0000";
+lastChange = "2023-01-05 11:09:27 +0000";
 layers = (
 {
 background = {
@@ -21092,81 +18661,11 @@ nodes = (
 layerId = "9BCDAEAC-6304-481D-8AE6-B16EBB77438F";
 shapes = (
 {
-closed = 1;
-nodes = (
-(312,0,l),
-(312,10,l),
-(311,10,ls),
-(263,10,o),
-(231,42,o),
-(231,90,cs),
-(231,384,l),
-(264,444,o),
-(313,482,o),
-(354,482,cs),
-(397,482,o),
-(425,439,o),
-(425,372,cs),
-(425,90,ls),
-(425,42,o),
-(393,10,o),
-(345,10,cs),
-(344,10,l),
-(344,0,l),
-(649,0,l),
-(649,10,l),
-(648,10,ls),
-(600,10,o),
-(568,42,o),
-(568,90,cs),
-(568,362,ls),
-(568,458,o),
-(509,522,o),
-(420,522,cs),
-(341,522,o),
-(263,475,o),
-(229,406,c),
-(228,546,l),
-(218,546,l),
-(211,535,o),
-(199,526,o),
-(183,519,cs),
-(166,512,o),
-(140,508,o),
-(105,508,cs),
-(6,508,l),
-(6,498,l),
-(72,498,o),
-(87,468,o),
-(87,418,cs),
-(87,90,ls),
-(87,42,o),
-(55,10,o),
-(7,10,cs),
-(6,10,l),
-(6,0,l)
-);
+ref = n;
 },
 {
-closed = 1;
-nodes = (
-(341,-286,o),
-(403,-239,o),
-(403,-143,cs),
-(403,-87,o),
-(371,-52,o),
-(322,-52,cs),
-(275,-52,o),
-(243,-81,o),
-(243,-128,cs),
-(243,-208,o),
-(341,-180,o),
-(341,-238,cs),
-(341,-282,o),
-(305,-306,o),
-(261,-359,c),
-(270,-363,l)
-);
+pos = (211,0);
+ref = commaaccentcomb;
 }
 );
 width = 636;
@@ -22984,13 +20483,13 @@ unicode = 113;
 {
 glyphname = r;
 kernLeft = i2;
-lastChange = "2023-01-05 10:52:45 +0000";
+lastChange = "2023-01-05 11:09:33 +0000";
 layers = (
 {
 anchors = (
 {
 name = bottom;
-pos = (227,0);
+pos = (167,0);
 },
 {
 name = top;
@@ -23261,7 +20760,7 @@ unicode = 345;
 {
 glyphname = rcommaaccent;
 kernLeft = J;
-lastChange = "2023-01-05 10:52:45 +0000";
+lastChange = "2023-01-05 11:09:33 +0000";
 layers = (
 {
 background = {
@@ -23343,66 +20842,11 @@ nodes = (
 layerId = "9BCDAEAC-6304-481D-8AE6-B16EBB77438F";
 shapes = (
 {
-closed = 1;
-nodes = (
-(312,0,l),
-(312,10,l),
-(311,10,ls),
-(263,10,o),
-(231,42,o),
-(231,90,cs),
-(231,357,l),
-(247,396,o),
-(265,428,o),
-(310,428,cs),
-(337,428,o),
-(371,419,o),
-(419,392,c),
-(458,509,l),
-(433,520,o),
-(410,523,o),
-(390,523,cs),
-(302,523,o),
-(254,442,o),
-(229,382,c),
-(228,546,l),
-(223,546,l),
-(208,523,o),
-(176,508,o),
-(105,508,cs),
-(6,508,l),
-(6,498,l),
-(72,498,o),
-(87,468,o),
-(87,418,cs),
-(87,90,ls),
-(87,42,o),
-(55,10,o),
-(7,10,cs),
-(6,10,l),
-(6,0,l)
-);
+ref = r;
 },
 {
-closed = 1;
-nodes = (
-(186,-286,o),
-(248,-239,o),
-(248,-143,cs),
-(248,-87,o),
-(216,-52,o),
-(167,-52,cs),
-(120,-52,o),
-(88,-81,o),
-(88,-128,cs),
-(88,-208,o),
-(186,-180,o),
-(186,-238,cs),
-(186,-282,o),
-(150,-306,o),
-(106,-359,c),
-(115,-363,l)
-);
+pos = (60,0);
+ref = commaaccentcomb;
 }
 );
 width = 453;
@@ -23847,7 +21291,7 @@ unicode = 351;
 {
 glyphname = scommaaccent;
 kernLeft = J;
-lastChange = "2023-01-05 10:52:45 +0000";
+lastChange = "2023-01-05 11:09:27 +0000";
 layers = (
 {
 background = {
@@ -23943,72 +21387,11 @@ nodes = (
 layerId = "9BCDAEAC-6304-481D-8AE6-B16EBB77438F";
 shapes = (
 {
-closed = 1;
-nodes = (
-(329,-13,o),
-(392,41,o),
-(392,144,cs),
-(392,225,o),
-(351,271,o),
-(258,319,cs),
-(228,334,ls),
-(161,369,o),
-(143,396,o),
-(143,432,cs),
-(143,480,o),
-(175,508,o),
-(226,508,cs),
-(284,508,o),
-(345,441,o),
-(358,347,c),
-(370,347,l),
-(356,508,l),
-(275,508,o),
-(275,522,o),
-(219,522,cs),
-(108,522,o),
-(37,466,o),
-(37,376,cs),
-(37,312,o),
-(72,255,o),
-(145,214,cs),
-(174,198,ls),
-(270,146,o),
-(301,122,o),
-(301,77,cs),
-(301,29,o),
-(265,-1,o),
-(197,-1,cs),
-(128,-1,o),
-(62,62,o),
-(41,188,c),
-(28,188,l),
-(52,0,l),
-(155,0,o),
-(135,-14,o),
-(204,-14,cs)
-);
+ref = s;
 },
 {
-closed = 1;
-nodes = (
-(226,-286,o),
-(288,-239,o),
-(288,-143,cs),
-(288,-87,o),
-(256,-52,o),
-(207,-52,cs),
-(160,-52,o),
-(128,-81,o),
-(128,-128,cs),
-(128,-208,o),
-(226,-180,o),
-(226,-238,cs),
-(226,-282,o),
-(190,-306,o),
-(146,-359,c),
-(155,-363,l)
-);
+pos = (101,0);
+ref = commaaccentcomb;
 }
 );
 width = 416;
@@ -24187,13 +21570,13 @@ unicode = 223;
 glyphname = t;
 kernLeft = J;
 kernRight = t;
-lastChange = "2023-01-05 10:52:45 +0000";
+lastChange = "2023-01-05 11:09:38 +0000";
 layers = (
 {
 anchors = (
 {
 name = bottom;
-pos = (198,0);
+pos = (228,0);
 },
 {
 name = center;
@@ -24363,7 +21746,7 @@ unicode = 357;
 {
 glyphname = tcommaaccent;
 kernLeft = J;
-lastChange = "2023-01-05 10:52:45 +0000";
+lastChange = "2023-01-05 11:09:38 +0000";
 layers = (
 {
 background = {
@@ -24429,55 +21812,11 @@ nodes = (
 layerId = "9BCDAEAC-6304-481D-8AE6-B16EBB77438F";
 shapes = (
 {
-closed = 1;
-nodes = (
-(274,-14,o),
-(339,21,o),
-(383,77,c),
-(383,87,l),
-(355,63,o),
-(321,47,o),
-(297,47,cs),
-(261,47,o),
-(243,74,o),
-(243,127,cs),
-(243,490,l),
-(366,490,l),
-(376,508,l),
-(243,508,l),
-(243,652,l),
-(227,652,l),
-(180,564,o),
-(106,510,o),
-(14,503,c),
-(14,490,l),
-(99,490,l),
-(99,105,ls),
-(99,34,o),
-(148,-14,o),
-(217,-14,cs)
-);
+ref = t;
 },
 {
-closed = 1;
-nodes = (
-(246,-286,o),
-(308,-239,o),
-(308,-143,cs),
-(308,-87,o),
-(276,-52,o),
-(227,-52,cs),
-(180,-52,o),
-(148,-81,o),
-(148,-128,cs),
-(148,-208,o),
-(246,-180,o),
-(246,-238,cs),
-(246,-282,o),
-(210,-306,o),
-(166,-359,c),
-(175,-363,l)
-);
+pos = (121,0);
+ref = commaaccentcomb;
 }
 );
 width = 396;
@@ -41477,17 +38816,17 @@ unicode = 772;
 {
 glyphname = commaturnedabovecomb;
 kernLeft = J;
-lastChange = "2023-01-05 10:52:45 +0000";
+lastChange = "2023-01-05 11:10:12 +0000";
 layers = (
 {
 anchors = (
 {
 name = _top;
-pos = (110,508);
+pos = (120,508);
 },
 {
 name = top;
-pos = (110,764);
+pos = (110,824);
 }
 );
 layerId = "9BCDAEAC-6304-481D-8AE6-B16EBB77438F";
@@ -41495,22 +38834,22 @@ shapes = (
 {
 closed = 1;
 nodes = (
-(127,531,o),
-(190,577,o),
-(190,673,cs),
-(190,729,o),
-(158,764,o),
-(109,764,cs),
-(62,764,o),
-(30,735,o),
-(30,688,cs),
-(30,608,o),
-(128,636,o),
-(128,578,cs),
-(128,534,o),
-(90,507,o),
-(48,457,c),
-(57,453,l)
+(93,846,o),
+(30,800,o),
+(30,704,cs),
+(30,648,o),
+(62,613,o),
+(111,613,cs),
+(158,613,o),
+(190,642,o),
+(190,689,cs),
+(190,769,o),
+(92,741,o),
+(92,799,cs),
+(92,843,o),
+(130,870,o),
+(172,920,c),
+(163,924,l)
 );
 }
 );
@@ -41522,7 +38861,7 @@ unicode = 786;
 {
 glyphname = commaaccentcomb;
 kernLeft = J;
-lastChange = "2023-01-05 10:52:45 +0000";
+lastChange = "2023-01-05 11:08:55 +0000";
 layers = (
 {
 anchors = (
@@ -41540,22 +38879,22 @@ shapes = (
 {
 closed = 1;
 nodes = (
-(124,165,o),
-(187,211,o),
-(187,307,cs),
-(187,363,o),
-(155,398,o),
-(106,398,cs),
-(59,398,o),
-(27,369,o),
-(27,322,cs),
-(27,242,o),
-(125,270,o),
-(125,212,cs),
-(125,168,o),
-(87,141,o),
-(45,91,c),
-(54,87,l)
+(124,-285,o),
+(187,-239,o),
+(187,-143,cs),
+(187,-87,o),
+(155,-52,o),
+(106,-52,cs),
+(59,-52,o),
+(27,-81,o),
+(27,-128,cs),
+(27,-208,o),
+(125,-180,o),
+(125,-238,cs),
+(125,-282,o),
+(87,-309,o),
+(45,-359,c),
+(54,-363,l)
 );
 }
 );
@@ -42736,6 +40075,7 @@ kerningLTR = {
 "@MMK_R_s2" = -15;
 "@MMK_R_u" = -8;
 "@MMK_R_z2" = -30;
+b = -10;
 };
 "@MMK_L_d" = {
 "@MMK_R_a2" = -10;
@@ -42743,6 +40083,7 @@ kerningLTR = {
 "@MMK_R_f" = 10;
 "@MMK_R_h2" = 5;
 "@MMK_R_u" = -3;
+"@MMK_R_J" = 10;
 };
 "@MMK_L_h" = {
 "@MMK_R_a2" = -15;
@@ -42759,7 +40100,9 @@ kerningLTR = {
 "@MMK_R_i2" = -10;
 };
 "@MMK_L_lcaron" = {
+"@MMK_R_J" = 160;
 "@MMK_R_h2" = 150;
+"@MMK_R_i2" = 80;
 };
 "@MMK_L_s" = {
 "@MMK_R_c2" = -10;
@@ -44270,31 +41613,26 @@ t = -35;
 w = 20;
 };
 e = {
-b = -10;
 comma = -20;
 g = -20;
 x = -14;
 };
 eacute = {
-b = -10;
 comma = -20;
 g = -20;
 x = -14;
 };
 ecircumflex = {
-b = -10;
 comma = -20;
 g = -20;
 x = -14;
 };
 edieresis = {
-b = -10;
 comma = -20;
 g = -20;
 x = -14;
 };
 egrave = {
-b = -10;
 comma = -20;
 g = -20;
 x = -14;
@@ -44626,7 +41964,6 @@ u = -30;
 w = -20;
 };
 l = {
-b = 10;
 g = -5;
 quoteright = -70;
 t = -35;
@@ -45323,13 +42660,13 @@ key = copyrights;
 values = (
 {
 language = dflt;
-value = "Copyright (c) 2022, Duarte Pinto (duarte.pinto02@gmail.com)";
+value = "Copyright 2022 The Gloock Project Authors (https://github.com/duartp/gloock)";
 }
 );
 },
 {
 key = designerURL;
-value = "duarte.pinto02@gmail.com";
+value = "https://www.behance.net/dwarte";
 },
 {
 key = designers;
@@ -45345,98 +42682,35 @@ key = licenses;
 values = (
 {
 language = dflt;
-value = "-----------------------------------------------------------
-SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
------------------------------------------------------------
-
-PREAMBLE
-The goals of the Open Font License (OFL) are to stimulate worldwide
-development of collaborative font projects, to support the font creation
-efforts of academic and linguistic communities, and to provide a free and
-open framework in which fonts may be shared and improved in partnership
-with others.
-
-The OFL allows the licensed fonts to be used, studied, modified and
-redistributed freely as long as they are not sold by themselves. The
-fonts, including any derivative works, can be bundled, embedded, 
-redistributed and/or sold with any software provided that any reserved
-names are not used by derivative works. The fonts and derivatives,
-however, cannot be released under any other type of license. The
-requirement for fonts to remain under this license does not apply
-to any document created using the fonts or their derivatives.
-
-DEFINITIONS
-\"Font Software\" refers to the set of files released by the Copyright
-Holder(s) under this license and clearly marked as such. This may
-include source files, build scripts and documentation.
-
-\"Reserved Font Name\" refers to any names specified as such after the
-copyright statement(s).
-
-\"Original Version\" refers to the collection of Font Software components as
-distributed by the Copyright Holder(s).
-
-\"Modified Version\" refers to any derivative made by adding to, deleting,
-or substituting -- in part or in whole -- any of the components of the
-Original Version, by changing formats or by porting the Font Software to a
-new environment.
-
-\"Author\" refers to any designer, engineer, programmer, technical
-writer or other person who contributed to the Font Software.
-
-PERMISSION & CONDITIONS
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of the Font Software, to use, study, copy, merge, embed, modify,
-redistribute, and sell modified and unmodified copies of the Font
-Software, subject to the following conditions:
-
-1) Neither the Font Software nor any of its individual components,
-in Original or Modified Versions, may be sold by itself.
-
-2) Original or Modified Versions of the Font Software may be bundled,
-redistributed and/or sold with any software, provided that each copy
-contains the above copyright notice and this license. These can be
-included either as stand-alone text files, human-readable headers or
-in the appropriate machine-readable metadata fields within text or
-binary files as long as those fields can be easily viewed by the user.
-
-3) No Modified Version of the Font Software may use the Reserved Font
-Name(s) unless explicit written permission is granted by the corresponding
-Copyright Holder. This restriction only applies to the primary font name as
-presented to the users.
-
-4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
-Software shall not be used to promote, endorse or advertise any
-Modified Version, except to acknowledge the contribution(s) of the
-Copyright Holder(s) and the Author(s) or with their explicit written
-permission.
-
-5) The Font Software, modified or unmodified, in part or in whole,
-must be distributed entirely under this license, and must not be
-distributed under any other license. The requirement for fonts to
-remain under this license does not apply to any document created
-using the Font Software.
-
-TERMINATION
-This license becomes null and void if any of the above conditions are
-not met.
-
-DISCLAIMER
-THE FONT SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
-OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
-COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
-DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
-OTHER DEALINGS IN THE FONT SOFTWARE.";
+value = "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL";
 }
 );
 },
 {
 key = manufacturerURL;
-value = "https://fonts.google.com/";
+value = "https://www.behance.net/dwarte";
+},
+{
+key = manufacturers;
+values = (
+{
+language = dflt;
+value = "Duarte Pinto";
+}
+);
+},
+{
+key = trademarks;
+values = (
+{
+language = dflt;
+value = "Gloock is a trademark of Duarte Pinto.";
+}
+);
+},
+{
+key = licenseURL;
+value = "https://scripts.sil.org/OFL";
 }
 );
 unitsPerEm = 1000;
