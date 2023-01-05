@@ -360,23 +360,35 @@ fontMaster = (
 customParameters = (
 {
 name = typoAscender;
-value = 780;
+value = 975;
 },
 {
 name = typoDescender;
-value = -200;
+value = -225;
 },
 {
 name = typoLineGap;
-value = 220;
+value = 0;
+},
+{
+name = hheaAscender;
+value = 975;
+},
+{
+name = hheaDescender;
+value = -225;
+},
+{
+name = hheaLineGap;
+value = 0;
 },
 {
 name = winAscent;
-value = 850;
+value = 1004;
 },
 {
 name = winDescent;
-value = 250;
+value = 363;
 },
 {
 name = underlineThickness;
@@ -393,50 +405,6 @@ value = 300;
 {
 name = strikeoutSize;
 value = 50;
-},
-{
-name = subscriptXOffset;
-value = 0;
-},
-{
-name = subscriptXSize;
-value = 650;
-},
-{
-name = subscriptYOffset;
-value = 75;
-},
-{
-name = subscriptYSize;
-value = 600;
-},
-{
-name = superscriptXOffset;
-value = 0;
-},
-{
-name = superscriptXSize;
-value = 650;
-},
-{
-name = superscriptYOffset;
-value = 350;
-},
-{
-name = superscriptYSize;
-value = 600;
-},
-{
-name = hheaAscender;
-value = 780;
-},
-{
-name = hheaDescender;
-value = -200;
-},
-{
-name = hheaLineGap;
-value = 220;
 }
 );
 guides = (
